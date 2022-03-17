@@ -1,7 +1,9 @@
 package bll;
-/*
+
 import be.User;
 import dal.dao.UserDAO;
+
+import java.sql.SQLException;
 
 public class TicketMasterManager {
     UserDAO userDAO;
@@ -10,11 +12,7 @@ public class TicketMasterManager {
         userDAO = new UserDAO();
     }
 
-
-    public User getUserByID(int userID) {
-
-        return userDAO.getUserByID(userID);
-
+    public User login(String username, String password) {
+        return userDAO.checkLogin(username, password);
     }
 }
-*/

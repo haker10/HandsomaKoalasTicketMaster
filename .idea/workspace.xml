@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/LoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/loginView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_activation_api_1_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/loginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/model/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/LoginModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/loginView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +45,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/mssql-jdbc-8.2.0.jre13.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.38045976" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -84,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647429219769</updated>
       <workItem from="1647429222012" duration="22000" />
-      <workItem from="1647531109793" duration="3517000" />
+      <workItem from="1647531109793" duration="14899000" />
     </task>
     <servers />
   </component>
