@@ -2,7 +2,6 @@ package dal.dao;
 
 import be.User;
 import dal.DatabaseConnector;
-import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_activation_api_1_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/loginView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/DatabaseConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/model/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/LoginModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/loginView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647429219769</updated>
       <workItem from="1647429222012" duration="22000" />
-      <workItem from="1647531109793" duration="14899000" />
+      <workItem from="1647531109793" duration="15931000" />
     </task>
     <servers />
   </component>

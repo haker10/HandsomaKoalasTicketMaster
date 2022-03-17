@@ -3,8 +3,6 @@ package bll;
 import be.User;
 import dal.dao.UserDAO;
 
-import java.sql.SQLException;
-
 public class TicketMasterManager {
     UserDAO userDAO;
 
