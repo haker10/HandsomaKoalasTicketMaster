@@ -13,4 +13,8 @@ public class TicketMasterManager {
     public User login(String username, String password) {
         return userDAO.checkLogin(username, password);
     }
+
+    public User createUser(String typeOfUser, String username, String password) {
+        return userDAO.createUser(typeOfUser, username, password);
+    }
 }
