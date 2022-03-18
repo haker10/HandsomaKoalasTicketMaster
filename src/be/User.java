@@ -30,6 +30,6 @@ public class User {
 
     @Override
     public String toString(){
-        return "User{" + "id=" + id + ", type of user='" + typeOfUser + ", login='" + login + ", password='" + password + '\'' + '}';
+        return "User{" + "id=" + id + ", type of user='" + typeOfUser + "', login='" + login + "', password='" + password + '\'' + '}';
     }
 }

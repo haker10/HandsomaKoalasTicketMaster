@@ -4,7 +4,11 @@ import be.User;
 import gui.model.LoginModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,8 +28,6 @@ public class LoginController implements Initializable {
     private Button LoginBtn;
 
     LoginModel loginModel;
-
-    private Stage stage;
 
     public LoginController(){
 
@@ -47,6 +49,8 @@ public class LoginController implements Initializable {
     public void LoginBtnPressed(ActionEvent actionEvent) {
         String username = UserNameTxt.getText().toString();
         String password = PasswordTxt.getText().toString();
+        Stage currentStage = (Stage) LoginBtn.getScene().getWindow();
+        currentStage.close();
         try {
             User result = loginModel.login(username, password);
             JFrame jFrame = new JFrame();
@@ -54,11 +58,36 @@ public class LoginController implements Initializable {
                 JOptionPane.showMessageDialog(jFrame, "LOGIN FAILED !!");
             }
             else {
-                JOptionPane.showMessageDialog(jFrame, "LOGIN SUCCESFULL !!");
+                if (result.getTypeOfUser().equals("ADMIN")){
+                    System.out.println("ADMIN");
+                    try{
+                        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
+                        Stage stage = new Stage();
+                        Scene scene = new Scene(root);
+                        stage.setTitle("Admin Page");
+                        stage.setScene(scene);
+                        stage.show();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+                else if (result.getTypeOfUser().equals("COORDINATOR")){
+                    System.out.println("COORDINATOR");
+                    try{
+                        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+                        Stage stage = new Stage();
+                        Scene scene = new Scene(root);
+                        stage.setTitle("Coordinator Page");
+                        stage.setScene(scene);
+                        stage.show();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
             }
 
             System.out.println(result.toString());
-        } catch (NullPointerException e) {
+        } catch (Exception e) {
         }
     }
 

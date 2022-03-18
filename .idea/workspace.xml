@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/controller/CoordinatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/model/AdminModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/model/CoordinatorModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/view/adminView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/view/coordinatorView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/LoginModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +83,9 @@
       <option name="presentableId" value="Default" />
       <updated>1647429219769</updated>
       <workItem from="1647429222012" duration="22000" />
-      <workItem from="1647531109793" duration="15931000" />
+      <workItem from="1647531109793" duration="17161000" />
+      <workItem from="1647555478194" duration="402000" />
+      <workItem from="1647592160626" duration="3034000" />
     </task>
     <servers />
   </component>
@@ -96,5 +102,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
