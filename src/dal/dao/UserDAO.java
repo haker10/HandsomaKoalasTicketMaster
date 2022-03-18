@@ -39,10 +39,6 @@ public class UserDAO {
         User user = null;
         String sql = "INSERT INTO Users(TypeOfUser, Username, Password) VALUES(?,?,?)";
 
-        checkTypeOFUserNotNull(typeOfUser);
-        checkUsernameNotNull(username);
-        checkPasswordNotNull(password);
-
         try(Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, typeOfUser);
@@ -58,21 +54,6 @@ public class UserDAO {
             throwables.printStackTrace();
         }
         return user;
-    }
-
-    private void checkPasswordNotNull(String password) {
-        if (password.isEmpty())
-            System.out.println("Please add a password");
-    }
-
-    private void checkUsernameNotNull(String username) {
-        if (username.isEmpty())
-            System.out.println("Please add an username");
-    }
-
-    private void checkTypeOFUserNotNull(String typeOfUser) {
-        if (typeOfUser.isEmpty())
-            System.out.println("Please add a Type Of User");
     }
 }
 
