@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javax.activation-api-1.2.01">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/javax.activation-api-1.2.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/jaxb-api-2.4.0-b180830.0359.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/mssql-jdbc-8.2.0.jre13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
