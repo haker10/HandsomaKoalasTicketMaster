@@ -1,11 +1,14 @@
 <component name="libraryTable">
   <library name="javax.activation-api-1.2.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/javax.activation-api-1.2.0.jar!/" />
-      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/jaxb-api-2.4.0-b180830.0359.jar!/" />
-      <root url="jar://$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/mssql-jdbc-8.2.0.jre13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Event Management/rar files (libralies)/javax.activation-api-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Event Management/rar files (libralies)/jaxb-api-2.4.0-b180830.0359.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Event Management/rar files (libralies)/mssql-jdbc-8.2.0.jre13.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
   </library>
 </component>

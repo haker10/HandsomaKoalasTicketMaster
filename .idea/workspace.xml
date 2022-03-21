@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +37,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/mssql-jdbc-8.2.0.jre13.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Event Management/rar files (libralies)/mssql-jdbc-8.2.0.jre13.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.15039062" />
     <property name="project.structure.side.proportion" value="0.38045976" />
   </component>
   <component name="RecentsManager">
@@ -77,6 +84,7 @@
       <workItem from="1647555478194" duration="402000" />
       <workItem from="1647592160626" duration="10601000" />
       <workItem from="1647890313255" duration="5239000" />
+      <workItem from="1647898199101" duration="2768000" />
     </task>
     <servers />
   </component>
@@ -93,7 +101,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
