@@ -64,7 +64,6 @@ public class LoginController implements Initializable {
             }
             else {
                 if (result.getTypeOfUser().equals("ADMIN")){
-                    System.out.println("ADMIN");
                     try{
                         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
                         Stage stage = new Stage();
@@ -77,7 +76,6 @@ public class LoginController implements Initializable {
                     }
                 }
                 else if (result.getTypeOfUser().equals("COORDINATOR")){
-                    System.out.println("COORDINATOR");
                     try{
                         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
                         Stage stage = new Stage();
@@ -90,8 +88,6 @@ public class LoginController implements Initializable {
                     }
                 }
             }
-
-            System.out.println(result.toString());
         } catch (Exception e) {
         }
     }

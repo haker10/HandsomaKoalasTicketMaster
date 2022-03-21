@@ -1,6 +1,5 @@
 package gui.controller;
 
-import gui.model.AdminModel;
 import gui.model.CoordinatorModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
