@@ -38,13 +38,12 @@ public class DeleteUserController implements Initializable {
 
     public void deleteUser(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
-        int chosenUserId = ((User) userChoiceBox.getSelectionModel().getSelectedItem()).getId();
         try{
             if (userChoiceBox.getValue() == null){
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             }
             else {
-                deleteUserModel.deleteUser(chosenUserId);
+                deleteUserModel.deleteUser(((User) userChoiceBox.getSelectionModel().getSelectedItem()).getId());
                 JOptionPane.showMessageDialog(jFrame, "USER DELETED !!");
                 Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
                 currentStage.close();
