@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/controller/DeleteUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/model/DeleteUserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/view/deleteUserView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/adminView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/adminView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +85,8 @@
       <workItem from="1647429222012" duration="22000" />
       <workItem from="1647531109793" duration="17161000" />
       <workItem from="1647555478194" duration="402000" />
-      <workItem from="1647592160626" duration="9999000" />
+      <workItem from="1647592160626" duration="10601000" />
+      <workItem from="1647890313255" duration="3683000" />
     </task>
     <servers />
   </component>

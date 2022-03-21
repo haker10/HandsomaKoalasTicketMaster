@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 public class AdminController implements Initializable {
 
     @FXML
-    private Button createUserBtn;
+    private Button createUserBtn, deleteUserBtn;
 
     AdminModel adminModel;
 
@@ -45,5 +45,20 @@ public class AdminController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+
+    public void deleteUser(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) deleteUserBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/deleteUserView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setTitle("Delete User");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

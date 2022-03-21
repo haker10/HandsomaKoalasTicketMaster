@@ -1,10 +1,11 @@
 package dal.dao;
 
 import be.User;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import dal.DatabaseConnector;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     DatabaseConnector databaseConnector;
@@ -54,6 +55,40 @@ public class UserDAO {
             throwables.printStackTrace();
         }
         return user;
+    }
+
+    public List<User> getAllUsers() {
+        List<User> allUsers = new ArrayList<>();
+        String sql = "SELECT * FROM Users";
+        try (Connection connection = databaseConnector.getConnection()) {
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+            ResultSet resultSet = statement.getResultSet();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ID");
+                String typeOfUser = resultSet.getString("TypeOfUser");
+                String username = resultSet.getString("Username");
+                String password = resultSet.getString("Password");
+                User user = new User(id, typeOfUser, username, password);
+                allUsers.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return allUsers;
+    }
+
+    public void deleteUser(int chosenUserId) {
+
+        String sql = "DELETE FROM Users WHERE ID = ?";
+
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, chosenUserId);
+            preparedStatement.executeUpdate();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 

@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -56,6 +55,12 @@ public class LoginController implements Initializable {
             JFrame jFrame = new JFrame();
             if (result == null) {
                 JOptionPane.showMessageDialog(jFrame, "LOGIN FAILED !!");
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/loginView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setTitle("TicketMaster");
+                stage.setScene(scene);
+                stage.show();
             }
             else {
                 if (result.getTypeOfUser().equals("ADMIN")){

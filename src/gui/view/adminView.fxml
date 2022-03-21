@@ -6,5 +6,6 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AdminController">
    <children>
       <Button fx:id="createUserBtn" layoutX="248.0" layoutY="49.0" mnemonicParsing="false" onAction="#createUser" text="Create New User" />
+      <Button fx:id="deleteUserBtn" layoutX="262.0" layoutY="117.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete User" />
    </children>
 </AnchorPane>
