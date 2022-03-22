@@ -1,16 +1,21 @@
 package bll;
 
+import be.Event;
 import be.User;
+import dal.dao.EventDAO;
 import dal.dao.UserDAO;
 
+import java.util.Date;
 import java.util.List;
 
 public class TicketMasterManager {
 
     UserDAO userDAO;
+    EventDAO eventDAO;
 
     public TicketMasterManager(){
         userDAO = new UserDAO();
+        eventDAO = new EventDAO();
     }
 
     public User login(String username, String password) {
@@ -31,5 +36,9 @@ public class TicketMasterManager {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address) {
+        return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address);
     }
 }
