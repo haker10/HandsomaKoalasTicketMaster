@@ -41,4 +41,16 @@ public class TicketMasterManager {
     public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address) {
         return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address);
     }
+
+    public List<Event> getAllEvents() {
+        return eventDAO.getAllEvents();
+    }
+
+    public void deleteEvent(int chosenEventId) {
+        try{
+            eventDAO.deleteEvent(chosenEventId);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

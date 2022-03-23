@@ -14,6 +14,7 @@ public class Event {
     //Constructor
     public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address){
         this.id = id;
+        this.name = name;
         this.startDatenTime = startDatenTime;
         this.endDatenTime = endDatenTime;
         this.address = address;
@@ -41,6 +42,6 @@ public class Event {
 
 
     public String toString(){
-        return id + " " + name + " " + startDatenTime + " " +  endDatenTime + " " + address;
+        return "Name: " + name + ", Start date: " + startDatenTime.toString().substring(0,10);
     }
 }

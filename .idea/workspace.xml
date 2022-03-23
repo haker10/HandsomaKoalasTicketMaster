@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/CreateNewEventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/CreateNewEventModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/createNewEventView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/controller/DeleteEventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/model/DeleteEventModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/view/deleteEventView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HandsomaKoalasTicketMaster.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/coordinatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/coordinatorView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dal/dao/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/CoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/CoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/coordinatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/coordinatorView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/adminView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/adminView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +90,8 @@
       <workItem from="1647904827489" duration="44000" />
       <workItem from="1647981030388" duration="3082000" />
       <workItem from="1647984149248" duration="4280000" />
+      <workItem from="1647989289905" duration="33000" />
+      <workItem from="1648070592794" duration="3194000" />
     </task>
     <servers />
   </component>
