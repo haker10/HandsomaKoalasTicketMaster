@@ -1,17 +1,19 @@
 package gui.model;
 
+import be.Customer;
 import be.Event;
 import bll.TicketMasterManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class DeleteEventModel {
+public class EditEventsModel {
 
     private ObservableList<Event> allEvents;
+    private ObservableList<Customer> listOfParticipants;
 
     TicketMasterManager manager;
 
-    public DeleteEventModel(){
+    public EditEventsModel(){
         manager = new TicketMasterManager();
     }
 
@@ -21,9 +23,9 @@ public class DeleteEventModel {
         return allEvents;
     }
 
-    public void deleteEvent(int chosenEventId) {
-
-        manager.deleteEvent(chosenEventId);
-
+    public ObservableList getListOfParticipants(int eventId) {
+        listOfParticipants = FXCollections.observableArrayList();
+        listOfParticipants.addAll(manager.getListOfParticipants(eventId));
+        return listOfParticipants;
     }
 }

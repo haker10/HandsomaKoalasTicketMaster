@@ -32,7 +32,7 @@ public class CreateNewUserController implements Initializable {
     private javafx.scene.control.Button createUserBtn;
 
     @FXML
-    public Label TypeOfUser;
+    private Label TypeOfUser;
 
 
     CreateNewUserModel createNewUserModel;

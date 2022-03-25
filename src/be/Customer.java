@@ -1,20 +1,14 @@
 package be;
 
 public class Customer {
-    int id;
     String name;
     String email;
     String phone;
 
-    public Customer(int id, String name, String email, String phone){
-        this.id = id;
+    public Customer(String name, String email, String phone){
         this.name = name;
         this.email = email;
         this.phone = phone;
-    }
-
-    public int getId(){
-        return id;
     }
 
     public String getName(){
@@ -30,6 +24,6 @@ public class Customer {
     }
 
     public String toString(){
-        return id + name + email + phone;
+        return "Name: " + name + "  Email: " + email + "  Phone: " + phone + "\n";
     }
 }

@@ -1,8 +1,8 @@
 package gui.controller;
 
 import be.Event;
-import be.User;
 import gui.model.DeleteEventModel;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +27,8 @@ public class DeleteEventController implements Initializable {
 
     DeleteEventModel deleteEventModel;
 
+    String type;
+
     public DeleteEventController(){
 
         deleteEventModel = new DeleteEventModel();
@@ -34,7 +36,15 @@ public class DeleteEventController implements Initializable {
     }
 
     private void loadData(){
+
+        Platform.runLater(() -> {
+            deleteEventModel = new DeleteEventModel();
+            Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+            type = (String) currentStage.getUserData();
+        });
+
         eventChoiceBox.getItems().addAll(deleteEventModel.getAllEvents());
+
     }
 
     @Override
@@ -51,16 +61,30 @@ public class DeleteEventController implements Initializable {
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             }
             else {
-                deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
-                JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
-                Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
-                currentStage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
-                Stage stage = new Stage();
-                Scene scene = new Scene(root);
-                stage.setTitle("Admin Page");
-                stage.setScene(scene);
-                stage.show();
+                if (type == "ADMIN") {
+                    deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
+                    JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
+                    Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+                    currentStage.close();
+                    Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(root);
+                    stage.setTitle("Admin Page");
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                else if (type == "COORDINATOR"){
+                    deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
+                    JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
+                    Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+                    currentStage.close();
+                    Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(root);
+                    stage.setTitle("Coordinator Page");
+                    stage.setScene(scene);
+                    stage.show();
+                }
             }
         }catch (Exception e){
             e.printStackTrace();

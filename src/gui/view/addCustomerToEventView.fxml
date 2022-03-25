@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddCustomerToEventController">
+   <children>
+      <ChoiceBox fx:id="eventChoiceBox" layoutX="225.0" layoutY="56.0" prefWidth="150.0" />
+      <TextField fx:id="customerNameTxt" layoutX="226.0" layoutY="132.0" promptText="Name" />
+      <TextField fx:id="emailCustomerTxt" layoutX="226.0" layoutY="200.0" promptText="Email" />
+      <TextField fx:id="phoneCustomerTxt" layoutX="226.0" layoutY="269.0" promptText="Phone" />
+      <Button fx:id="addCustomerToEventBtn" layoutX="229.0" layoutY="331.0" mnemonicParsing="false" onAction="#addCustomerToEvent" text="Add Customer To Event" />
+   </children>
+</AnchorPane>

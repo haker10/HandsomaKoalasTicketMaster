@@ -2,11 +2,13 @@ package gui.model;
 
 import bll.TicketMasterManager;
 
-public class CoordinatorModel {
+public class ListOfParticipantsModel {
 
     TicketMasterManager manager;
 
-    public CoordinatorModel(){
+    public ListOfParticipantsModel(){
+
         manager = new TicketMasterManager();
+
     }
 }

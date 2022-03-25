@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 public class AdminController implements Initializable {
 
     @FXML
-    public Button deleteEventBtn;
+    private Button deleteEventBtn;
 
     @FXML
     private Button createUserBtn, deleteUserBtn;
@@ -74,6 +74,7 @@ public class AdminController implements Initializable {
             Scene scene = new Scene(root);
             stage.setTitle("Delete Event");
             stage.setScene(scene);
+            stage.setUserData("ADMIN");
             stage.show();
         }catch (Exception e){
             e.printStackTrace();

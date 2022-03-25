@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.SearchCustomersController">
+   <children>
+      <TextField fx:id="keywordTextField" layoutX="226.0" layoutY="27.0" />
+      <Label layoutX="177.0" layoutY="31.0" text="Filter" />
+      <TableView fx:id="customersTableView" layoutX="17.0" layoutY="71.0" prefHeight="314.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="148.0" text="Name" />
+          <TableColumn fx:id="emailColumn" prefWidth="273.0" text="Email" />
+            <TableColumn fx:id="phoneColumn" prefWidth="142.0" text="Phone" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

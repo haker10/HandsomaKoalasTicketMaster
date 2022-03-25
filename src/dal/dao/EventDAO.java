@@ -1,7 +1,6 @@
 package dal.dao;
 
 import be.Event;
-import be.User;
 import dal.DatabaseConnector;
 
 import java.sql.*;
@@ -73,5 +72,29 @@ public class EventDAO {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address) {
+        Event event = null;
+        java.sql.Timestamp startDateAndTimeSql = new java.sql.Timestamp(startDateAndTime.getTime());
+        java.sql.Timestamp endDateAndTimeSql = new java.sql.Timestamp(endDateAndTime.getTime());
+        String sql = "UPDATE Events SET NAME=?, STARTDATENTIME =?, ENDDATENTIME=?,  ADDRESS=? WHERE ID =?";
+
+        try(Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, name);
+            preparedStatement.setTimestamp(2, startDateAndTimeSql);
+            preparedStatement.setTimestamp(3, endDateAndTimeSql);
+            preparedStatement.setString(4, address);
+            preparedStatement.setInt(5, id);
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            while (resultSet.next()){
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address);
+            }
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return event;
     }
 }

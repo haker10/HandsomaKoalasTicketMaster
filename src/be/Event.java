@@ -1,7 +1,5 @@
 package be;
 
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Date;
 
 public class Event {
@@ -11,7 +9,6 @@ public class Event {
     Date endDatenTime;
     String address;
 
-    //Constructor
     public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address){
         this.id = id;
         this.name = name;

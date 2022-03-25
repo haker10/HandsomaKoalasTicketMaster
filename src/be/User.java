@@ -6,7 +6,6 @@ public class User {
     String login;
     String password;
 
-    //Constructor
     public User(int id, String typeOfUser, String login, String password){
         this.id=id;
         this.typeOfUser = typeOfUser;
