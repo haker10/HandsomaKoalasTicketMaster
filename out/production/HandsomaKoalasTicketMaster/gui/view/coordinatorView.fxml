@@ -23,7 +23,7 @@
             <Button fx:id="addCustomerToEventBtn" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="125.0" mnemonicParsing="false" onAction="#addCustomerToEvent" prefHeight="31.0" prefWidth="178.0" styleClass="functionBtn" text="Add to Event" />
             <Button fx:id="createEventBtn" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="32.0" mnemonicParsing="false" onAction="#createEvent" prefHeight="31.0" prefWidth="178.0" styleClass="functionBtn" text="Create Event" />
             <Button fx:id="deleteEventBtn" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="156.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="31.0" prefWidth="178.0" styleClass="functionBtn" text="Delete Event" />
-            <Button fx:id="logoutBtn" layoutX="72.0" layoutY="210.0" mnemonicParsing="false" onAction="#OnClickLogoutBtn" prefHeight="25.0" prefWidth="57.0" styleClass="logout" text="Log out" textAlignment="JUSTIFY" wrapText="true" />
+            <Button fx:id="logoutBtn" layoutX="73.0" layoutY="210.0" mnemonicParsing="false" onAction="#OnClickLogoutBtn" prefHeight="25.0" prefWidth="57.0" styleClass="logout" text="Log out" textAlignment="JUSTIFY" wrapText="true" />
             <ImageView fitHeight="25.0" fitWidth="34.0" layoutX="19.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/search.png" />
