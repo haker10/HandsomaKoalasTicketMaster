@@ -3,6 +3,7 @@ package gui.controller;
 
 import be.Event;
 import gui.model.EditEventsModel;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +13,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.net.URL;
@@ -63,10 +66,11 @@ public class EditEventsController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/gui/view/editEventView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
-                stage.setTitle("Edit Event");
+                stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
                 stage.setUserData(eventChoiceBox.getSelectionModel().getSelectedItem());
                 stage.show();
+                scene.setFill(Color.TRANSPARENT);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -81,13 +85,18 @@ public class EditEventsController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/listOfParticipantsView.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            stage.setTitle("List of Participants");
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.setUserData(listOfParticipants);
             stage.show();
+            scene.setFill(Color.TRANSPARENT);
         } catch(Exception e){
             e.printStackTrace();
         }
 
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

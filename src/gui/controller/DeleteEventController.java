@@ -11,13 +11,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DeleteEventController implements Initializable {
+
+    @FXML
+    private AnchorPane fieldsAnchorPane;
 
     @FXML
     private ChoiceBox<?> eventChoiceBox;
@@ -39,7 +45,7 @@ public class DeleteEventController implements Initializable {
 
         Platform.runLater(() -> {
             deleteEventModel = new DeleteEventModel();
-            Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+            Stage currentStage = (Stage) fieldsAnchorPane.getScene().getWindow();
             type = (String) currentStage.getUserData();
         });
 
@@ -57,6 +63,7 @@ public class DeleteEventController implements Initializable {
     public void deleteEvent(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
         try{
+
             if (eventChoiceBox.getValue() == null){
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             }
@@ -69,10 +76,13 @@ public class DeleteEventController implements Initializable {
                     Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
                     Stage stage = new Stage();
                     Scene scene = new Scene(root);
-                    stage.setTitle("Admin Page");
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
                 }
+
+
                 else if (type == "COORDINATOR"){
                     deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
                     JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
@@ -81,7 +91,8 @@ public class DeleteEventController implements Initializable {
                     Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
                     Stage stage = new Stage();
                     Scene scene = new Scene(root);
-                    stage.setTitle("Coordinator Page");
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    scene.setFill(Color.TRANSPARENT);
                     stage.setScene(scene);
                     stage.show();
                 }
@@ -89,5 +100,9 @@ public class DeleteEventController implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

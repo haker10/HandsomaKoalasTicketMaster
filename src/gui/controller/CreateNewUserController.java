@@ -1,6 +1,7 @@
 package gui.controller;
 
 import gui.model.CreateNewUserModel;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 import javax.swing.*;
@@ -69,12 +73,17 @@ public class CreateNewUserController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
-                stage.setTitle("Admin Page");
+                stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
                 stage.show();
+                scene.setFill(Color.TRANSPARENT);
             }
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

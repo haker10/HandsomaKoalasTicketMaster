@@ -4,15 +4,35 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="278.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewUserController">
    <children>
-      <TextField fx:id="newUsernameTxt" layoutX="129.0" layoutY="115.0" promptText="USERNAME" />
-      <TextField fx:id="newPasswordTxt" layoutX="129.0" layoutY="181.0" promptText="PASSWORD" />
-      <ChoiceBox fx:id="typeOfUserChoiceBox" layoutX="128.0" layoutY="46.0" prefWidth="150.0" />
       <Label layoutX="149.0" layoutY="127.0" />
-      <Label fx:id="TypeOfUser" layoutX="34.0" layoutY="50.0" text="Type Of User" />
-      <Button fx:id="createUserBtn" layoutX="165.0" layoutY="239.0" mnemonicParsing="false" onAction="#HandleCreateUser" text="Create User" />
+      <AnchorPane layoutX="179.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
+         <children>
+            <Button fx:id="createUserBtn" layoutX="121.0" layoutY="185.0" mnemonicParsing="false" onAction="#HandleCreateUser" styleClass="createBtn" text="Create User" />
+            <TextField fx:id="newPasswordTxt" alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="17.0" prefWidth="149.0" promptText="PASSWORD" styleClass="text-field" />
+            <TextField fx:id="newUsernameTxt" alignment="CENTER" layoutX="36.0" layoutY="100.0" promptText="USERNAME" styleClass="text-field" />
+            <ChoiceBox fx:id="typeOfUserChoiceBox" layoutX="35.0" layoutY="55.0" prefWidth="150.0" />
+            <Label fx:id="TypeOfUser" alignment="CENTER" layoutX="67.0" layoutY="28.0" prefHeight="27.0" prefWidth="88.0" styleClass="label1" text="Type Of User">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="13.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+            <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="241.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginController">
    <children>
-      <Button fx:id="LoginBtn" layoutX="163.0" layoutY="187.0" mnemonicParsing="false" onAction="#LoginBtnPressed" text="Login" />
-      <TextField fx:id="UserNameTxt" layoutX="112.0" layoutY="62.0" promptText="UserName" />
-      <PasswordField fx:id="PasswordTxt" layoutX="112.0" layoutY="111.0" promptText="Password" />
+      <AnchorPane fx:id="sideBar" layoutX="31.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="295.0" prefWidth="220.0" styleClass="sideBar">
+         <children>
+            <Button layoutX="182.0" layoutY="14.0" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+            <ImageView fx:id="image" fitHeight="90.0" fitWidth="157.0" layoutX="31.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../HandsomaKoalasTicketMaster/src/images/logo.png" />
+               </image></ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="251.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="310.0" styleClass="fieldsAnchorPane">
+         <children>
+            <TextField fx:id="UserNameTxt" alignment="CENTER" layoutX="72.0" layoutY="53.0" prefHeight="25.0" prefWidth="174.0" promptText="Username" />
+
+            <PasswordField fx:id="PasswordTxt" alignment="CENTER" layoutX="72.0" layoutY="109.0" prefHeight="25.0" prefWidth="174.0" promptText="Password" />
+            <Button fx:id="LoginBtn" layoutX="112.0" layoutY="176.0" onAction="#LoginBtnPressed" prefHeight="41.0" prefWidth="87.0" styleClass="loginBtn" text="Login" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

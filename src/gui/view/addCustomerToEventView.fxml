@@ -2,16 +2,37 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddCustomerToEventController">
-   <children>
-      <ChoiceBox fx:id="eventChoiceBox" layoutX="225.0" layoutY="56.0" prefWidth="150.0" />
-      <TextField fx:id="customerNameTxt" layoutX="226.0" layoutY="132.0" promptText="Name" />
-      <TextField fx:id="emailCustomerTxt" layoutX="226.0" layoutY="200.0" promptText="Email" />
-      <TextField fx:id="phoneCustomerTxt" layoutX="226.0" layoutY="269.0" promptText="Phone" />
-      <Button fx:id="addCustomerToEventBtn" layoutX="229.0" layoutY="331.0" mnemonicParsing="false" onAction="#addCustomerToEvent" text="Add Customer To Event" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="670.0" styleClass="primaryStage" stylesheets="@css/addCustomerToEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddCustomerToEventController">
+<children>
+   <AnchorPane layoutX="120.0" layoutY="94.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="249.0" prefWidth="166.0" styleClass="sideBar">
+      <children>
+         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+         <ImageView fitHeight="74.0" fitWidth="132.0" layoutX="23.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../images/logo.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+   <AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" layoutX="286.0" layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="255.0" styleClass="fieldsAnchorPane">
+      <children>
+         <Button fx:id="addCustomerToEventBtn" layoutX="57.0" layoutY="203.0" mnemonicParsing="false" onAction="#addCustomerToEvent" styleClass="addCustomerToEvent" text="Add Customer To Event" />
+         <TextField fx:id="phoneCustomerTxt" alignment="CENTER" layoutX="45.0" layoutY="125.0" prefHeight="25.0" prefWidth="166.0" promptText="Phone" />
+         <TextField fx:id="emailCustomerTxt" alignment="CENTER" layoutX="45.0" layoutY="84.0" prefHeight="25.0" prefWidth="166.0" promptText="Email" />
+         <ChoiceBox fx:id="eventChoiceBox" layoutX="8.0" layoutY="38.0" prefHeight="25.0" prefWidth="239.0" />
+         <TextField fx:id="customerNameTxt" alignment="CENTER" layoutX="45.0" layoutY="162.0" prefHeight="25.0" prefWidth="166.0" promptText="Name" />
+            <Label alignment="CENTER" layoutX="86.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Choose Event">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+      </children>
+   </AnchorPane>
+</children>
 </AnchorPane>

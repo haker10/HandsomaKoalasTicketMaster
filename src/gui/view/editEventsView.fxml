@@ -2,12 +2,28 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="162.0" prefWidth="234.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/editEvents.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventsController">
 <children>
-    <ChoiceBox fx:id="eventChoiceBox" layoutX="42.0" layoutY="25.0" prefWidth="150.0" />
-    <Button fx:id="editBtn" layoutX="99.0" layoutY="81.0" mnemonicParsing="false" onAction="#editEvents" text="Edit" />
-      <Button fx:id="listOfParticipantsBtn" layoutX="50.0" layoutY="123.0" mnemonicParsing="false" onAction="#getListOfParticipants" text="Get List of Participants" />
+    <AnchorPane layoutX="89.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="249.0" prefWidth="181.0" styleClass="sideBar">
+        <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+            <ImageView fitHeight="68.0" fitWidth="158.0" layoutX="30.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../images/logo.png" />
+                </image>
+            </ImageView>
+        </children>
+    </AnchorPane>
+      <AnchorPane layoutX="270.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="209.0" styleClass="fieldsAnchorPane">
+         <children>
+          <ChoiceBox fx:id="eventChoiceBox" layoutX="13.0" layoutY="40.0" prefHeight="25.0" prefWidth="188.0" />
+          <Button fx:id="editBtn" layoutX="89.0" layoutY="106.0" mnemonicParsing="false" onAction="#editEvents" styleClass="edit" text="Edit" />
+            <Button fx:id="listOfParticipantsBtn" layoutX="39.0" layoutY="167.0" mnemonicParsing="false" onAction="#getListOfParticipants" styleClass="getList" text="Get List of Participants" />
+         </children>
+      </AnchorPane>
 </children>
 </AnchorPane>

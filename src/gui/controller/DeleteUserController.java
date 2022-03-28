@@ -2,6 +2,7 @@ package gui.controller;
 
 import be.User;
 import gui.model.DeleteUserModel;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +10,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.net.URL;
@@ -50,9 +53,10 @@ public class DeleteUserController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
-                stage.setTitle("Admin Page");
+                stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
                 stage.show();
+                scene.setFill(Color.TRANSPARENT);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -64,5 +68,9 @@ public class DeleteUserController implements Initializable {
 
         loadData();
 
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

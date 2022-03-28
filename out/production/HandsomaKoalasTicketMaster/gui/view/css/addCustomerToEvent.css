@@ -1,0 +1,37 @@
+.primaryStage{
+    -fx-background-color: Transparent;
+}
+.fieldsAnchorPane {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+}
+.sideBar {
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
+    -fx-background-radius: 25;
+}
+.XBtn{
+    -fx-background-color: transparent;
+}
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+.addCustomerToEvent {
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
+    -fx-background-radius: 25;
+}
+
+
+.choice-box {
+    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
+    -fx-mark-color: #47cfd2;
+}
+.choice-box .context-menu { -fx-background-color: #47cfd2; }
+.choice-box .menu-item:focused { -fx-background-color: #fc76b3; }
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: black; }

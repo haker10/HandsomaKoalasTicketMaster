@@ -4,18 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="720.0" styleClass="primaryStage" stylesheets="@css/editEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventController">
    <children>
-      <Label layoutX="100.0" layoutY="58.0" text="NAME" />
-      <Label layoutX="100.0" layoutY="139.0" text="START AND DATE TIME" />
-      <Label layoutX="100.0" layoutY="217.0" text="END DATE AND TIME" />
-      <Label layoutX="100.0" layoutY="291.0" text="ADDRESS" />
-      <TextField fx:id="nameTxt" layoutX="300.0" layoutY="54.0" />
-      <TextField fx:id="startDateAndTimeTxt" layoutX="300.0" layoutY="127.0" />
-      <TextField fx:id="endDateAndTimeTxt" layoutX="300.0" layoutY="213.0" />
-      <TextField fx:id="addressTxt" layoutX="300.0" layoutY="296.0" />
-      <Button fx:id="saveBtn" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#saveEdit" text="SAVE" />
+      <AnchorPane layoutX="163.0" layoutY="80.0" prefHeight="295.0" prefWidth="157.0" styleClass="left">
+         <children>
+            <Label alignment="CENTER" layoutX="22.0" layoutY="94.0" text="START AND DATE TIME">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="33.0" text="NAME">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="148.0" prefHeight="8.0" prefWidth="114.0" text="END DATE AND TIME">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="59.0" layoutY="216.0" prefWidth="51.0" text="ADDRESS">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="320.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="295.0" prefWidth="222.0" styleClass="right">
+         <children>
+            <TextField fx:id="nameTxt" alignment="CENTER" layoutX="25.0" layoutY="27.0" />
+            <TextField fx:id="startDateAndTimeTxt" alignment="CENTER" layoutX="25.0" layoutY="85.0" />
+            <TextField fx:id="endDateAndTimeTxt" alignment="CENTER" layoutX="27.0" layoutY="146.0" />
+            <TextField fx:id="addressTxt" alignment="CENTER" layoutX="27.0" layoutY="209.0" prefHeight="17.0" prefWidth="149.0" />
+            <Button fx:id="saveBtn" layoutX="91.0" layoutY="256.0" mnemonicParsing="false" onAction="#saveEdit" styleClass="save" text="SAVE" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

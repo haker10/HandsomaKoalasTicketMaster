@@ -11,7 +11,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.net.URL;
@@ -83,8 +85,10 @@ public class EditEventController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
-                stage.setTitle("Coordinator Page");
+                stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
+                stage.show();
+                scene.setFill(Color.TRANSPARENT);
                 stage.show();
             }
         }catch (Exception e){

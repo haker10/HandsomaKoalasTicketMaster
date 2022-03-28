@@ -1,49 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/be/CustomerJoinsEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dal/dao/CustomerJoinsEventDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/AddCustomerToEventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/EditEventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/EditEventsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/ListOfParticipantsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/SearchCustomersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/AddCustomerToEventModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/EditEventModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/EditEventsModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/ListOfParticipantsModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/model/SearchCustomersModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/addCustomerToEventView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/editEventView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/editEventsView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/listOfParticipantsView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/view/searchCustomersView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/coordinatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/coordinatorView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/deleteEventView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HandsomaKoalasTicketMaster/gui/view/deleteEventView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/TicketMasterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/dao/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/CoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/CoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/CreateNewEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/CreateNewEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/CreateNewUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/CreateNewUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/DeleteEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/DeleteEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/AdminModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/AdminModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/CoordinatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/CoordinatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/CreateNewEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/CreateNewEventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/CreateNewUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/CreateNewUserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/DeleteEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/DeleteEventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/DeleteUserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/DeleteUserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model/LoginModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/coordinatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/coordinatorView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/deleteEventView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/deleteEventView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="ad3794be-bda4-4571-9824-f33fcf9544ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,13 +13,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,13 +46,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/EASV/1st semester final assignment/MyTunes/lib/mssql-jdbc-8.2.0.jre13.jar" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../HandsomaKoalasTicketMaster-main" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.38045976" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\justNiko_Rig\Desktop\School\GithubProjects\HandsomaKoalasTicketMaster\src\images" />
+      <recent name="C:\Users\justNiko_Rig\Desktop\School\GithubProjects\HandsomaKoalasTicketMaster\src\gui\controller" />
+      <recent name="C:\Users\justNiko_Rig\Desktop\School\GithubProjects\HandsomaKoalasTicketMaster\src" />
+      <recent name="C:\Users\justNiko_Rig\Desktop\School\GithubProjects\HandsomaKoalasTicketMaster\src\gui\view" />
       <recent name="C:\Users\Diogo\Documents\GitHub\HandsomaKoalasTicketMaster\src\gui\view" />
     </key>
   </component>
@@ -125,6 +104,32 @@
       <workItem from="1647989289905" duration="33000" />
       <workItem from="1648070592794" duration="5711000" />
       <workItem from="1648141802068" duration="25817000" />
+      <workItem from="1648232658970" duration="7037000" />
+      <workItem from="1648242196553" duration="729000" />
+      <workItem from="1648246830176" duration="194000" />
+      <workItem from="1648283074976" duration="7343000" />
+      <workItem from="1648293855476" duration="705000" />
+      <workItem from="1648294574147" duration="977000" />
+      <workItem from="1648295564407" duration="2000" />
+      <workItem from="1648295664603" duration="1078000" />
+      <workItem from="1648296758771" duration="359000" />
+      <workItem from="1648297133209" duration="220000" />
+      <workItem from="1648297370517" duration="62000" />
+      <workItem from="1648297731599" duration="4391000" />
+      <workItem from="1648303555833" duration="1047000" />
+      <workItem from="1648304701915" duration="18000" />
+      <workItem from="1648304827462" duration="822000" />
+      <workItem from="1648305663175" duration="689000" />
+      <workItem from="1648306363392" duration="2000" />
+      <workItem from="1648308932503" duration="642000" />
+      <workItem from="1648375071733" duration="13000" />
+      <workItem from="1648379012025" duration="23000" />
+      <workItem from="1648388282124" duration="15000" />
+      <workItem from="1648391593397" duration="500000" />
+      <workItem from="1648392108337" duration="7932000" />
+      <workItem from="1648413427409" duration="717000" />
+      <workItem from="1648414159900" duration="5362000" />
+      <workItem from="1648498776403" duration="2839000" />
     </task>
     <servers />
   </component>
@@ -141,7 +146,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

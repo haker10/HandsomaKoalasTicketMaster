@@ -1,0 +1,30 @@
+.primaryStage{
+    -fx-background-color: transparent;
+}
+.fieldsAnchorPane {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+}
+.sideBar{
+    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
+    -fx-background-radius: 25;
+}
+.XBtn{
+    -fx-background-color: transparent;
+}
+.choice-box {
+    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
+    -fx-mark-color: #47cfd2;
+}
+.choice-box .context-menu { -fx-background-color: #47cfd2; }
+.choice-box .menu-item:focused { -fx-background-color: #fc76b3; }
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused > .label { -fx-text-fill: black; }
+.edit{
+    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
+    -fx-mark-color: #47cfd2;
+}
+.getList{
+    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
+    -fx-mark-color: #47cfd2;
+}
