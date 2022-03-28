@@ -145,6 +145,7 @@ public class CoordinatorController implements Initializable {
             stage.setScene(scene);
             stage.show();
             scene.setFill(Color.TRANSPARENT);
+            System.out.println(" ");
         }catch (Exception e){
             e.printStackTrace();
         }
