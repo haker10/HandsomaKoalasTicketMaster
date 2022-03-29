@@ -11,6 +11,7 @@ public class UserDAO {
     DatabaseConnector databaseConnector;
 
     public UserDAO() {
+
         databaseConnector = new DatabaseConnector();
     }
 
