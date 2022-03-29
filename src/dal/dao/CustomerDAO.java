@@ -100,4 +100,16 @@ public class CustomerDAO {
         }
         return allCustomers;
     }
+
+    public void deleteCustomer(String email) {
+        String sql = "DELETE FROM Customers WHERE EMAIL = ?";
+
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            preparedStatement.executeUpdate();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

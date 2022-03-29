@@ -81,4 +81,12 @@ public class TicketMasterManager {
     public List<Customer> getAllCustomers() {
         return customerDAO.getAllCustomers();
     }
+
+    public void deleteCustomer(String email) {
+        try{
+            customerDAO.deleteCustomer(email);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

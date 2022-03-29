@@ -17,8 +17,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
+
     @FXML
     public Button XBtn;
+
+    @FXML
+    public Button deleteCustomerBtn;
 
     @FXML
     private Button deleteEventBtn;
@@ -111,6 +115,22 @@ public class AdminController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+
+    public void deleteCustomer(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) deleteCustomerBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/deleteCustomerView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 
