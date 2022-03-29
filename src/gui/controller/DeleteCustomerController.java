@@ -73,4 +73,8 @@ public class DeleteCustomerController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
+    }
 }
