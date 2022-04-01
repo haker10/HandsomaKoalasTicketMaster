@@ -19,6 +19,9 @@ import java.util.ResourceBundle;
 public class CoordinatorController implements Initializable {
 
     @FXML
+    private Button printTicketBtn;
+
+    @FXML
     private Button searchCustomersBtn;
 
     @FXML
@@ -148,5 +151,22 @@ public class CoordinatorController implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void printTicket(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) logoutBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/printTicketView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            // stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+           // scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

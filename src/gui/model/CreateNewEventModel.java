@@ -1,10 +1,14 @@
 package gui.model;
 
 import bll.TicketMasterManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.Date;
 
 public class CreateNewEventModel {
+
+    private ObservableList<String> listTypes;
 
     TicketMasterManager manager;
 
@@ -13,7 +17,16 @@ public class CreateNewEventModel {
         manager = new TicketMasterManager();
     }
 
-    public void createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address) {
-        manager.createEvent(name, startDateAndTime, endDateAndTime, address);
+    public void createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType) {
+        manager.createEvent(name, startDateAndTime, endDateAndTime, address, ticketType);
+    }
+
+    public ObservableList ticketTypes(String types) {
+        types.replaceAll("\\s+","");
+        String str[] = types.split(",");
+
+        listTypes = FXCollections.observableArrayList();
+        listTypes.addAll(str);
+        return listTypes;
     }
 }

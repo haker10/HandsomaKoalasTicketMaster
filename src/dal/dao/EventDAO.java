@@ -16,11 +16,11 @@ public class EventDAO {
         databaseConnector = new DatabaseConnector();
     }
 
-    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address) {
+    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType) {
         Event event = null;
         java.sql.Timestamp startDateAndTimeSql = new java.sql.Timestamp(startDateAndTime.getTime());
         java.sql.Timestamp endDateAndTimeSql = new java.sql.Timestamp(endDateAndTime.getTime());
-        String sql = "INSERT INTO Events(NAME, STARTDATENTIME, ENDDATENTIME, ADDRESS) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO Events(NAME, STARTDATENTIME, ENDDATENTIME, ADDRESS, ticketTypes) VALUES(?,?,?,?,?)";
 
         try(Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -28,11 +28,12 @@ public class EventDAO {
             preparedStatement.setTimestamp(2, startDateAndTimeSql);
             preparedStatement.setTimestamp(3, endDateAndTimeSql);
             preparedStatement.setString(4, address);
+            preparedStatement.setString(5, ticketType);
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
-                event = new Event(id, name, startDateAndTime, endDateAndTime, address);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketType);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();
@@ -53,13 +54,30 @@ public class EventDAO {
                 Date startDateAndTime = resultSet.getTimestamp("STARTDATENTIME");
                 Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
                 String address = resultSet.getString("ADDRESS");
-                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address);
+                String ticketTypes = resultSet.getString("ticketTypes");
+                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes);
                 allEvents.add(event);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return allEvents;
+    }
+    public String getTicketTypes(int eventId) {
+        String sql = "SELECT * FROM Events WHERE ID = ?";
+        String types = "";
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, eventId);
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+            while (resultSet.next()) {
+             types = resultSet.getString("ticketTypes");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return types;
     }
 
     public void deleteEvent(int chosenEventId) {
@@ -74,11 +92,11 @@ public class EventDAO {
         }
     }
 
-    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address) {
+    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes) {
         Event event = null;
         java.sql.Timestamp startDateAndTimeSql = new java.sql.Timestamp(startDateAndTime.getTime());
         java.sql.Timestamp endDateAndTimeSql = new java.sql.Timestamp(endDateAndTime.getTime());
-        String sql = "UPDATE Events SET NAME=?, STARTDATENTIME =?, ENDDATENTIME=?,  ADDRESS=? WHERE ID =?";
+        String sql = "UPDATE Events SET NAME=?, STARTDATENTIME =?, ENDDATENTIME=?,  ADDRESS=?, ticketTypes=? WHERE ID =?";
 
         try(Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -86,11 +104,12 @@ public class EventDAO {
             preparedStatement.setTimestamp(2, startDateAndTimeSql);
             preparedStatement.setTimestamp(3, endDateAndTimeSql);
             preparedStatement.setString(4, address);
-            preparedStatement.setInt(5, id);
+            preparedStatement.setString(5, ticketTypes);
+            preparedStatement.setInt(6, id);
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             while (resultSet.next()){
-                event = new Event(id, name, startDateAndTime, endDateAndTime, address);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();
