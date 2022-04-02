@@ -53,6 +53,9 @@ public class TicketMasterManager {
     public List<Event> getAllEvents() {
         return eventDAO.getAllEvents();
     }
+    public List<Event> getAllEventsToDo() {
+        return eventDAO.getAllEventsToDo();
+    }
 
     public void deleteEvent(int chosenEventId) {
         try{

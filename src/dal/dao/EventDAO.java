@@ -62,6 +62,28 @@ public class EventDAO {
         return allEvents;
     }
 
+    public List<Event> getAllEventsToDo() {
+        List<Event> allEvents = new ArrayList<>();
+        String sql = "SELECT * FROM Events WHERE STARTDATENTIME > CURRENT_TIMESTAMP";
+        try (Connection connection = databaseConnector.getConnection()) {
+            Statement statement = connection.createStatement();
+            statement.execute(sql);
+            ResultSet resultSet = statement.getResultSet();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ID");
+                String name = resultSet.getString("NAME");
+                Date startDateAndTime = resultSet.getTimestamp("STARTDATENTIME");
+                Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
+                String address = resultSet.getString("ADDRESS");
+                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address);
+                allEvents.add(event);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return allEvents;
+    }
+
     public void deleteEvent(int chosenEventId) {
         String sql = "DELETE FROM Events WHERE ID = ?";
 
