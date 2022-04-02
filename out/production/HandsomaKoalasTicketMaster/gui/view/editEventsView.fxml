@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/editEvents.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventsController">
-<children>
-    <AnchorPane layoutX="89.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="249.0" prefWidth="181.0" styleClass="sideBar">
-        <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
-            <ImageView fitHeight="68.0" fitWidth="158.0" layoutX="30.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../images/logo.png" />
-                </image>
-            </ImageView>
-        </children>
-    </AnchorPane>
-      <AnchorPane layoutX="270.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="209.0" styleClass="fieldsAnchorPane">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/searchCustomers.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventsController">
+   <children>
+      <TableView fx:id="eventTableView" layoutX="17.0" layoutY="71.0" prefHeight="314.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="eventColumn" prefWidth="148.0" text="Name" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="17.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="69.0" prefWidth="564.0" styleClass="top">
          <children>
-          <ChoiceBox fx:id="eventChoiceBox" layoutX="13.0" layoutY="40.0" prefHeight="25.0" prefWidth="188.0" />
-          <Button fx:id="editBtn" layoutX="89.0" layoutY="106.0" mnemonicParsing="false" onAction="#editEvents" styleClass="edit" text="Edit" />
-            <Button fx:id="listOfParticipantsBtn" layoutX="39.0" layoutY="167.0" mnemonicParsing="false" onAction="#getListOfParticipants" styleClass="getList" text="Get List of Participants" />
+             <Button fx:id="editBtn" layoutX="450" layoutY="22.0" mnemonicParsing="false" onAction="#editEvents" styleClass="edit" text="Edit" />
+             <Button fx:id="listOfParticipantsBtn" layoutX="60.0" layoutY="22.0" mnemonicParsing="false" onAction="#getListOfParticipants" styleClass="getList" text="Get List of Participants" />
+            <TextField fx:id="keywordTextField" layoutX="208.0" layoutY="22.0" />
+            <Label layoutX="380.0" layoutY="26.0" text="Filter">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-</children>
+   </children>
 </AnchorPane>
