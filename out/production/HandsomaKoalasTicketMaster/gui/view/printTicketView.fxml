@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="648.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
+<AnchorPane prefHeight="648.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
    <children>
       <AnchorPane layoutX="61.0" prefHeight="104.0" prefWidth="722.0" style="-fx-background-color: yellow;">
          <children>
@@ -16,10 +16,9 @@
       </AnchorPane>
       <TableView fx:id="searchTicketTV" layoutX="61.0" layoutY="104.0" prefHeight="518.0" prefWidth="722.0">
         <columns>
-          <TableColumn fx:id="eventNameColumn" prefWidth="165.0" text="Event Name" />
-          <TableColumn fx:id="emailColumn" minWidth="0.0" prefWidth="173.0" text="Customer Email" />
-            <TableColumn fx:id="ticketTypeColumn" minWidth="0.0" prefWidth="176.0" text="Ticket Types" />
-            <TableColumn fx:id="additionalInfoColumn" minWidth="0.0" prefWidth="207.0" text="additional Info" />
+          <TableColumn fx:id="eventNameColumn" prefWidth="231.0" text="Event Name" />
+          <TableColumn fx:id="emailColumn" minWidth="0.0" prefWidth="239.0" text="Customer Email" />
+            <TableColumn fx:id="ticketTypeColumn" minWidth="0.0" prefWidth="251.0" text="Ticket Types" />
         </columns>
       </TableView>
    </children>
