@@ -119,4 +119,27 @@ public class EventDAO {
         }
         return event;
     }
+
+    public String getEventById(int id){
+        String event = "";
+        String sql = "SELECT * FROM Event WHERE ID=?";
+        try(Connection connection = databaseConnector.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+            if(resultSet.next()){
+                String name = resultSet.getString("NAME");
+                Date startDateAndTime = resultSet.getTimestamp("STARTDATENTIME");
+                Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
+                String address = resultSet.getString("ADDRESS");
+                String ticketTypes = resultSet.getString("ticketTypes");
+                String additionalInfo = resultSet.getString("AdditionalInfo");
+                event = id + name + startDateAndTime + endDateAndTime + address + ticketTypes + additionalInfo;
+            }
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return event;
+    }
 }

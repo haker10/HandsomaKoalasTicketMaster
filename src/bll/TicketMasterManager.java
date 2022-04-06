@@ -100,4 +100,6 @@ public class TicketMasterManager {
     public List<Ticket> getAllTickets() {
         return ticketDAO.getAllTickets();
     }
+
+    public String getEventById(int id){ return eventDAO.getEventById(id); }
 }

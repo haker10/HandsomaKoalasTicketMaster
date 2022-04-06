@@ -21,4 +21,6 @@ public class PrintTicketModel {
         allTickets.addAll(manager.getAllTickets());
         return allTickets;
     }
+
+    public String getEventById(int id){ return manager.getEventById(id); }
 }
