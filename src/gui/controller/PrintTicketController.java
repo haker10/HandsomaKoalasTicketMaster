@@ -9,10 +9,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -27,7 +24,7 @@ public class PrintTicketController implements Initializable {
     private Button printBtn;
 
     @FXML
-    private TableView searchTicketTV;
+    private TableView<Ticket> searchTicketTV;
 
     @FXML
     private TableColumn eventNameColumn;
@@ -58,6 +55,13 @@ public class PrintTicketController implements Initializable {
         }
     }
     public void printTicket(ActionEvent actionEvent) {
+        TablePosition pos = searchTicketTV.getSelectionModel().getSelectedCells().get(0);
+        int event = (Integer) eventNameColumn.getCellObservableValue(searchTicketTV.getItems().get(pos.getRow())).getValue();
+        String email = (String) emailColumn.getCellObservableValue((searchTicketTV.getItems().get(pos.getRow()))).getValue();
+        String eventInfo = printTicketModel.getEventById(event);
+        String customerInfo = printTicketModel.getCustomerByEmail(email);
+        System.out.println(eventInfo);
+        System.out.println(customerInfo);
     }
 
     @Override

@@ -23,4 +23,8 @@ public class PrintTicketModel {
     }
 
     public String getEventById(int id){ return manager.getEventById(id); }
+
+    public String getCustomerByEmail(String email) {
+        return manager.getCustomerByEmail(email);
+    }
 }

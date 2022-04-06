@@ -102,4 +102,7 @@ public class TicketMasterManager {
     }
 
     public String getEventById(int id){ return eventDAO.getEventById(id); }
+
+    public String getCustomerByEmail(String email) { return customerDAO.getCustomerByEmail(email); }
+
 }

@@ -122,7 +122,7 @@ public class EventDAO {
 
     public String getEventById(int id){
         String event = "";
-        String sql = "SELECT * FROM Event WHERE ID=?";
+        String sql = "SELECT * FROM Events WHERE ID=?";
         try(Connection connection = databaseConnector.getConnection()){
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
