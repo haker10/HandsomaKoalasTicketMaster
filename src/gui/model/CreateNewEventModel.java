@@ -17,8 +17,8 @@ public class CreateNewEventModel {
         manager = new TicketMasterManager();
     }
 
-    public void createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType) {
-        manager.createEvent(name, startDateAndTime, endDateAndTime, address, ticketType);
+    public void createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType, String additionalInfo) {
+        manager.createEvent(name, startDateAndTime, endDateAndTime, address, ticketType, additionalInfo);
     }
 
     public ObservableList ticketTypes(String types) {

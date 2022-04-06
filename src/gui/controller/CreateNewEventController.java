@@ -31,6 +31,9 @@ public class CreateNewEventController implements Initializable {
     public TextField ticketTypesTxt;
 
     @FXML
+    private TextField additionalInfoTxt;
+
+    @FXML
     private Button createEventBtn;
 
     @FXML
@@ -55,6 +58,8 @@ public class CreateNewEventController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        additionalInfoTxt.setText("No additional info");
+
     }
 
 
@@ -67,7 +72,7 @@ public class CreateNewEventController implements Initializable {
                 ObservableList ticketTypeList = createNewEventModel.ticketTypes(ticketTypesTxt.getText());
                 Date startDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(startDateAndTimeTxt.getText());
                 Date endDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(endDateAndTimeTxt.getText());
-                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), "Standard" + "," + ticketTypesTxt.getText());
+                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), "Standard" + "," + ticketTypesTxt.getText(), additionalInfoTxt.getText());
                 JOptionPane.showMessageDialog(jFrame, "EVENT CREATED !!");
                 Stage currentStage = (Stage) createEventBtn.getScene().getWindow();
                 currentStage.close();

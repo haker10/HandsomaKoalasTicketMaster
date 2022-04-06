@@ -38,8 +38,6 @@ public class PrintTicketController implements Initializable {
     @FXML
     private TableColumn ticketTypeColumn;
 
-    @FXML
-    private TableColumn additionalInfoColumn;
 
     PrintTicketModel printTicketModel;
     //Constructor =  Lego
@@ -48,10 +46,10 @@ public class PrintTicketController implements Initializable {
         printTicketModel = new PrintTicketModel();
     }
     public void updateTicketListTableView(){
+        //send event name instead of event id - to do
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("eventId"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         ticketTypeColumn.setCellValueFactory(new PropertyValueFactory<>("ticketType"));
-        additionalInfoColumn.setCellValueFactory(new PropertyValueFactory<>("additionalInfo"));
         try{
             searchTicketTV.setItems(printTicketModel.getAllTickets());
 
@@ -85,7 +83,7 @@ public class PrintTicketController implements Initializable {
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (ticket.getCustomerId().toLowerCase().contains(lowerCaseFilter) || ticket.getTicketType().toLowerCase().contains(lowerCaseFilter) || ticket.getAdditionalInfo().toLowerCase().contains(lowerCaseFilter))
+                if (ticket.getCustomerId().toLowerCase().contains(lowerCaseFilter) || ticket.getTicketType().toLowerCase().contains(lowerCaseFilter))
                     return true;
                 else
                     return false;

@@ -16,11 +16,11 @@ public class EventDAO {
         databaseConnector = new DatabaseConnector();
     }
 
-    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType) {
+    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType, String additionalInfo) {
         Event event = null;
         java.sql.Timestamp startDateAndTimeSql = new java.sql.Timestamp(startDateAndTime.getTime());
         java.sql.Timestamp endDateAndTimeSql = new java.sql.Timestamp(endDateAndTime.getTime());
-        String sql = "INSERT INTO Events(NAME, STARTDATENTIME, ENDDATENTIME, ADDRESS, ticketTypes) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO Events(NAME, STARTDATENTIME, ENDDATENTIME, ADDRESS, ticketTypes, AdditionalInfo) VALUES(?,?,?,?,?,?)";
 
         try(Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -29,11 +29,12 @@ public class EventDAO {
             preparedStatement.setTimestamp(3, endDateAndTimeSql);
             preparedStatement.setString(4, address);
             preparedStatement.setString(5, ticketType);
+            preparedStatement.setString(6, additionalInfo);
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
-                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketType);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketType, additionalInfo);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();
@@ -55,7 +56,8 @@ public class EventDAO {
                 Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
                 String address = resultSet.getString("ADDRESS");
                 String ticketTypes = resultSet.getString("ticketTypes");
-                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes);
+                String additionalInfo = resultSet.getString("AdditionalInfo");
+                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
                 allEvents.add(event);
             }
         } catch (SQLException throwables) {
@@ -92,11 +94,11 @@ public class EventDAO {
         }
     }
 
-    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes) {
+    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes, String additionalInfo) {
         Event event = null;
         java.sql.Timestamp startDateAndTimeSql = new java.sql.Timestamp(startDateAndTime.getTime());
         java.sql.Timestamp endDateAndTimeSql = new java.sql.Timestamp(endDateAndTime.getTime());
-        String sql = "UPDATE Events SET NAME=?, STARTDATENTIME =?, ENDDATENTIME=?,  ADDRESS=?, ticketTypes=? WHERE ID =?";
+        String sql = "UPDATE Events SET NAME=?, STARTDATENTIME =?, ENDDATENTIME=?,  ADDRESS=?, ticketTypes=?, AdditionalInfo=? WHERE ID =?";
 
         try(Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -105,11 +107,12 @@ public class EventDAO {
             preparedStatement.setTimestamp(3, endDateAndTimeSql);
             preparedStatement.setString(4, address);
             preparedStatement.setString(5, ticketTypes);
-            preparedStatement.setInt(6, id);
+            preparedStatement.setString(6, additionalInfo);
+            preparedStatement.setInt(7, id);
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             while (resultSet.next()){
-                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();

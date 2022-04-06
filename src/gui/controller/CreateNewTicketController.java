@@ -26,17 +26,20 @@ public class CreateNewTicketController implements Initializable {
 
 
     @FXML
-    public Label customerName;
+    private Label customerName;
+
     @FXML
-    public Label eventName;
+    private Label eventName;
+
     @FXML
-    public Label startTime;
-    @FXML
-    private Button createTicketBtn;
-    @FXML
-    private TextField additionalInfoTxt;
+    private Label startTime;
+
     @FXML
     private CheckComboBox typeChoice;
+
+    @FXML
+    private Button createTicketBtn;
+
 
     CreateNewTicketModel createNewTicketModel;
 
@@ -70,7 +73,6 @@ public class CreateNewTicketController implements Initializable {
             String types = createNewTicketModel.getTicketTypes(eventId);
             types.replaceAll("\\s+","");
             String str[] = types.split(",");
-            additionalInfoTxt.setText("No additional info");
             customerName.setText(customer);
             eventName.setText(event);
 
@@ -97,7 +99,7 @@ public class CreateNewTicketController implements Initializable {
                         choosenTypes += list.get(i) + " ";
 
                     }
-                    createNewTicketModel.createTicket(eventId, customer, choosenTypes, additionalInfoTxt.getText());
+                    createNewTicketModel.createTicket(eventId, customer, choosenTypes);
 
                     JOptionPane.showMessageDialog(jFrame, "TICKET CREATED !!");
                     Stage currentStage = (Stage) createTicketBtn.getScene().getWindow();

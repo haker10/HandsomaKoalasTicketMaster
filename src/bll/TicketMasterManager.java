@@ -43,8 +43,8 @@ public class TicketMasterManager {
         }
     }
 
-    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType) {
-        return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address, ticketType);
+    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketType, String additionalInfo) {
+        return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address, ticketType, additionalInfo);
     }
 
     public List<Event> getAllEvents() {
@@ -72,8 +72,8 @@ public class TicketMasterManager {
         return customerJoinsEventDAO.addCustomerToEvent(eventId, customerEmail);
     }
 
-    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes) {
-        return eventDAO.editEvent(id, name, startDateAndTime, endDateAndTime, address, ticketTypes);
+    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes, String additionalInfo) {
+        return eventDAO.editEvent(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
     }
 
     public List<Customer> getListOfParticipants(int eventId) {
@@ -92,9 +92,9 @@ public class TicketMasterManager {
         }
     }
 
-    public Ticket createTicket(int eventId, String customer, String choosenTypes, String additionalInfo) {
+    public Ticket createTicket(int eventId, String customer, String choosenTypes) {
 
-       return ticketDAO.createTicket(eventId, customer, choosenTypes, additionalInfo);
+       return ticketDAO.createTicket(eventId, customer, choosenTypes);
     }
 
     public List<Ticket> getAllTickets() {

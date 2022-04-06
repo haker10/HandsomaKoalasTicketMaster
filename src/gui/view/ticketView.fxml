@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +13,6 @@
       <children>
          <CheckComboBox fx:id="typeChoice" layoutX="45.0" layoutY="129.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@css/ticket.css" title="Standard" />
          <Button fx:id="createTicketBtn" layoutX="68.0" layoutY="219.0" mnemonicParsing="false" onAction="#createTicket" styleClass="createBtn" text="Create Ticket" />
-         <TextField fx:id="additionalInfoTxt" layoutX="45.0" layoutY="179.0" promptText="additional info" />
             <Label fx:id="customerName" contentDisplay="CENTER" layoutX="67.0" layoutY="36.0" prefHeight="17.0" prefWidth="105.0"  textAlignment="CENTER" />
             <Label fx:id="eventName" contentDisplay="CENTER" layoutX="67.0" layoutY="89.0" prefHeight="17.0" prefWidth="105.0"  textAlignment="CENTER" />
       </children>

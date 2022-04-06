@@ -24,6 +24,9 @@ import java.util.ResourceBundle;
 public class EditEventController implements Initializable {
 
     @FXML
+    private TextField additionalInfoTxt;
+
+    @FXML
     private TextField nameTxt;
 
     @FXML
@@ -61,6 +64,7 @@ public class EditEventController implements Initializable {
             endDateAndTimeTxt.setText(event.getEndDatenTime().toString());
             addressTxt.setText(event.getAddress());
             ticketTypesTxt.setText(event.getTicketTypes());
+            additionalInfoTxt.setText(event.getAdditionalInfo());
         });
 
 
@@ -81,7 +85,7 @@ public class EditEventController implements Initializable {
             else {
                 Date startDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(startDateAndTimeTxt.getText());
                 Date endDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(endDateAndTimeTxt.getText());
-                editEventModel.editEvent(event.getId(), nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(),  ticketTypesTxt.getText());
+                editEventModel.editEvent(event.getId(), nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(),  ticketTypesTxt.getText(), additionalInfoTxt.getText());
                 JOptionPane.showMessageDialog(jFrame, "EVENT EDITED !!");
                 Stage currentStage = (Stage) saveBtn.getScene().getWindow();
                 currentStage.close();

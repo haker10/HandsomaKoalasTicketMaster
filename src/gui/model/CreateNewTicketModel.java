@@ -9,10 +9,9 @@ public class CreateNewTicketModel {
         manager = new TicketMasterManager();
     }
 
-    public void createTicket(int eventId, String customer, String choosenTypes, String additionalInfo) {
+    public void createTicket(int eventId, String customer, String choosenTypes) {
 
-
-        manager.createTicket(eventId, customer, choosenTypes, additionalInfo);
+        manager.createTicket(eventId, customer, choosenTypes);
     }
 
     public String getTicketTypes(int eventId) {
