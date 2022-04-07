@@ -48,7 +48,7 @@ public class CustomerTicketController implements Initializable {
 
             try {
                 WritableImage image = anchorPane.snapshot(new SnapshotParameters(), null);
-                File file = new File(String.format("C:\\Users\\Diogo\\Desktop\\%s", customerNameFinal2));
+                File file = new File(String.format("src/images/tickets/%s", customerNameFinal2));
                 ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
         } catch (Exception e) {
             e.printStackTrace();
