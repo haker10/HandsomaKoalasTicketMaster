@@ -32,9 +32,6 @@ public class CreateNewTicketController implements Initializable {
     private Label eventName;
 
     @FXML
-    private Label startTime;
-
-    @FXML
     private CheckComboBox typeChoice;
 
     @FXML
@@ -51,9 +48,6 @@ public class CreateNewTicketController implements Initializable {
     private ObservableList listTypes;
     String choosenTypes = "";
     String customerNEvent;
-    String time = " ";
-    String cName = " ";
-    String eName = " ";
 
     @Override
     public void initialize(URL location, ResourceBundle resources){

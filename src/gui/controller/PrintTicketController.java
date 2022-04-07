@@ -47,7 +47,6 @@ public class PrintTicketController implements Initializable {
         printTicketModel = new PrintTicketModel();
     }
     public void updateTicketListTableView(){
-        //send event name instead of event id - to do
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("eventId"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         ticketTypeColumn.setCellValueFactory(new PropertyValueFactory<>("ticketType"));
