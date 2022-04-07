@@ -4,6 +4,8 @@ import be.CustomerJoinsEvent;
 import dal.DatabaseConnector;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerJoinsEventDAO {
 
@@ -58,5 +60,25 @@ public class CustomerJoinsEventDAO {
             throwables.printStackTrace();
         }
         return customerJoinsEvent;
+    }
+
+    public List<Integer> getEventByCustomer(String customerEmail) {
+
+        List<Integer> eventIds = new ArrayList<Integer>();
+
+        String sql = "SELECT EventID FROM AddCustomerToEvent WHERE CustomerID=?";
+
+        try (Connection connection = databaseConnector.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, customerEmail);
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+            while (resultSet.next()){
+                eventIds.add(resultSet.getInt("EventID"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return eventIds;
     }
 }

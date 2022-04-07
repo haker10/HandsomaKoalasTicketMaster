@@ -63,6 +63,10 @@ public class AddCustomerToEventController implements Initializable {
 
     public void addCustomerToEvent(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
+        String customerEmail = emailCustomerTxt.getText();
+        String eventName = ((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getName();
+        int eventID = ((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId();
+        String customerNEvent = customerEmail + "-" + eventName + "-" + eventID;
         try {
             if (eventChoiceBox.getValue() == null || phoneCustomerTxt.getText().isEmpty() || emailCustomerTxt.getText().isEmpty() || customerNameTxt.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
@@ -72,11 +76,12 @@ public class AddCustomerToEventController implements Initializable {
                 JOptionPane.showMessageDialog(jFrame, "CUSTOMER ADDED TO EVENT !!");
                 Stage currentStage = (Stage) addCustomerToEventBtn.getScene().getWindow();
                 currentStage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/ticketView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
                 stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
+                stage.setUserData(customerNEvent);
                 stage.show();
                 scene.setFill(Color.TRANSPARENT);
             }

@@ -1,13 +1,8 @@
 package bll;
 
-import be.Customer;
-import be.CustomerJoinsEvent;
-import be.Event;
-import be.User;
-import dal.dao.CustomerDAO;
-import dal.dao.CustomerJoinsEventDAO;
-import dal.dao.EventDAO;
-import dal.dao.UserDAO;
+import be.*;
+import dal.dao.*;
+import javafx.collections.ObservableList;
 
 import java.util.Date;
 import java.util.List;
@@ -18,12 +13,14 @@ public class TicketMasterManager {
     EventDAO eventDAO;
     CustomerDAO customerDAO;
     CustomerJoinsEventDAO customerJoinsEventDAO;
+    TicketDAO ticketDAO;
 
     public TicketMasterManager(){
         userDAO = new UserDAO();
         eventDAO = new EventDAO();
         customerDAO = new CustomerDAO();
         customerJoinsEventDAO = new CustomerJoinsEventDAO();
+        ticketDAO = new TicketDAO();
     }
 
     public User login(String username, String password) {
@@ -46,8 +43,8 @@ public class TicketMasterManager {
         }
     }
 
-    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String addressUrl, String ticketTypes, String extraInfo) {
-        return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, extraInfo);
+    public Event createEvent(String name, Date startDateAndTime, Date endDateAndTime, String address, String addressUrl, String ticketTypes, String additionalInfo) {
+        return eventDAO.createEvent(name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
     }
 
     public List<Event> getAllEvents() {
@@ -56,6 +53,11 @@ public class TicketMasterManager {
     public List<Event> getAllEventsToDo() {
         return eventDAO.getAllEventsToDo();
     }
+
+    public String getTicketTypes(int eventId) {
+        return eventDAO.getTicketTypes(eventId);
+    }
+
 
     public void deleteEvent(int chosenEventId) {
         try{
@@ -73,8 +75,8 @@ public class TicketMasterManager {
         return customerJoinsEventDAO.addCustomerToEvent(eventId, customerEmail);
     }
 
-    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String addressUrl, String ticketTypes, String extraInfo) {
-        return eventDAO.editEvent(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, extraInfo);
+    public Event editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String addressUrl, String ticketTypes, String additionalInfo) {
+        return eventDAO.editEvent(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
     }
 
     public List<Customer> getListOfParticipants(int eventId) {
@@ -91,5 +93,24 @@ public class TicketMasterManager {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Ticket createTicket(int eventId, String customer, String choosenTypes) {
+
+       return ticketDAO.createTicket(eventId, customer, choosenTypes);
+    }
+
+    public List<Ticket> getAllTickets() {
+        return ticketDAO.getAllTickets();
+    }
+
+    public String getEventById(int id){ return eventDAO.getEventById(id); }
+
+    public Event getEventByIdOL(int id){ return eventDAO.getEventByIdOL(id); }
+
+    public String getCustomerByEmail(String email) { return customerDAO.getCustomerByEmail(email); }
+
+    public List<Integer> getEventByCustomer(String customerEmail) {
+        return customerJoinsEventDAO.getEventByCustomer(customerEmail);
     }
 }

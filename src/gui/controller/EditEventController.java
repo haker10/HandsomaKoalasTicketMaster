@@ -24,6 +24,9 @@ import java.util.ResourceBundle;
 public class EditEventController implements Initializable {
 
     @FXML
+    private TextField additionalInfoTxt;
+
+    @FXML
     private TextField nameTxt;
 
     @FXML
@@ -47,6 +50,8 @@ public class EditEventController implements Initializable {
     @FXML
     private Button saveBtn;
 
+    @FXML
+    private TextField ticketTypesTxt;
 
     EditEventModel editEventModel;
 
@@ -68,6 +73,8 @@ public class EditEventController implements Initializable {
             endDateAndTimeTxt.setText(event.getEndDatenTime().toString());
             addressTxt.setText(event.getAddress());
             addressUrlTxt.setText(event.getAddressUrl());
+            ticketTypesTxt.setText(event.getTicketTypes());
+            additionalInfoTxt.setText(event.getAdditionalInfo());
         });
 
 
@@ -82,13 +89,13 @@ public class EditEventController implements Initializable {
     public void saveEdit(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
         try{
-            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || addressUrlTxt.getText().isEmpty() || ticketTypes.getText().isEmpty() || extraInfo.getText().isEmpty()){
+            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || addressUrlTxt.getText().isEmpty() || ticketTypes.getText().isEmpty() || additionalInfo.getText().isEmpty()){
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             }
             else {
                 Date startDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(startDateAndTimeTxt.getText());
                 Date endDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(endDateAndTimeTxt.getText());
-                editEventModel.editEvent(event.getId(), nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), addressUrlTxt.getText(), ticketTypes.getText(), extraInfo.getText());
+                editEventModel.editEvent(event.getId(), nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), addressUrlTxt.getText(), ticketTypes.getText(), additionalInfo.getText());
                 JOptionPane.showMessageDialog(jFrame, "EVENT EDITED !!");
                 Stage currentStage = (Stage) saveBtn.getScene().getWindow();
                 currentStage.close();
