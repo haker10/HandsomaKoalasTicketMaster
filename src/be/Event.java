@@ -8,15 +8,18 @@ public class Event {
     Date startDatenTime;
     Date endDatenTime;
     String address;
+    String addressUrl;
     String ticketTypes;
     String extraInfo;
 
-    public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address, String ticketTypes, String extraInfo){
+
+    public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address, String addressUrl, String ticketTypes, String extraInfo){
         this.id = id;
         this.name = name;
         this.startDatenTime = startDatenTime;
         this.endDatenTime = endDatenTime;
         this.address = address;
+        this.addressUrl = addressUrl;
         this.ticketTypes = ticketTypes;
         this.extraInfo = extraInfo;
     }
@@ -40,6 +43,8 @@ public class Event {
     public String getAddress(){
         return address;
     }
+
+    public String getAddressUrl() { return addressUrl; }
 
     public String getTicketTypes(){ return ticketTypes; }
 
