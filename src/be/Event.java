@@ -1,6 +1,9 @@
 package be;
 
+import java.awt.*;
 import java.util.Date;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Event {
     int id;
@@ -22,6 +25,19 @@ public class Event {
         this.addressUrl = addressUrl;
         this.ticketTypes = ticketTypes;
         this.extraInfo = extraInfo;
+    }
+
+    public void goUrl(String addressUrl) {
+        if (java.awt.Desktop.isDesktopSupported()){
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+
+            if (desktop.isSupported(Desktop.Action.BROWSE)){
+                try{
+                    java.net.URI uri = new java.net.URI(addressUrl);
+                    desktop.browse(uri);
+                } catch (URISyntaxException | IOException exception){}
+            }
+        }
     }
 
     public int getId(){
@@ -49,6 +65,7 @@ public class Event {
     public String getTicketTypes(){ return ticketTypes; }
 
     public String getExtraInfo(){ return extraInfo; }
+
 
 
     public String toString(){
