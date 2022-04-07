@@ -50,7 +50,6 @@ public class CustomerParticipationController implements Initializable {
             customerParticipationModel = new CustomerParticipationModel();
             Stage currentStage = (Stage) customerParticipationTV.getScene().getWindow();
             String customerEmail = (String) currentStage.getUserData();
-            System.out.println(customerEmail);
             List<Integer> eventIDs = customerParticipationModel.getEventByCustomer(customerEmail);
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
             startInfoColumn.setCellValueFactory(new PropertyValueFactory<>("startDatenTime"));
