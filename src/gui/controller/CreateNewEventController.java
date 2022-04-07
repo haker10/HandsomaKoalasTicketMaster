@@ -50,13 +50,7 @@ public class CreateNewEventController implements Initializable {
     private TextField addressTxt;
 
     @FXML
-    private TextField addressUrlTxt;
-
-    @FXML
-    private TextField ticketTypes;
-
-    @FXML
-    private TextField extraInfo;
+    private TextField addressURLTxt;
 
     CreateNewEventModel createNewEventModel;
 
@@ -76,13 +70,13 @@ public class CreateNewEventController implements Initializable {
     public void createEvent(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
         try {
-            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || addressUrlTxt.getText().isEmpty() || ticketTypes.getText().isEmpty() || additionalInfo.getText().isEmpty())
+            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || addressURLTxt.getText().isEmpty() || ticketTypesTxt.getText().isEmpty() || additionalInfoTxt.getText().isEmpty())
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             else {
                 ObservableList ticketTypeList = createNewEventModel.ticketTypes(ticketTypesTxt.getText());
                 Date startDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(startDateAndTimeTxt.getText());
                 Date endDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(endDateAndTimeTxt.getText());
-                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), addressUrlTxt.getText(), ticketTypes.getText(), additionalInfo.getText());
+                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), addressURLTxt.getText(), ticketTypesTxt.getText(), additionalInfoTxt.getText());
                 JOptionPane.showMessageDialog(jFrame, "EVENT CREATED !!");
                 Stage currentStage = (Stage) createEventBtn.getScene().getWindow();
                 currentStage.close();

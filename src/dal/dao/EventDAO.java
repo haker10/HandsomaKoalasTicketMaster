@@ -58,7 +58,7 @@ public class EventDAO {
                 String address = resultSet.getString("ADDRESS");
                 String addressUrl = resultSet.getString("ADDRESSURL");
                 String ticketTypes = resultSet.getString("ticketTypes");
-                String extraInfo = resultSet.getString("AdditionalInfo");
+                String additionalInfo = resultSet.getString("AdditionalInfo");
                 Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
                 allEvents.add(event);
             }
@@ -161,9 +161,10 @@ public class EventDAO {
                 Date startDateAndTime = resultSet.getTimestamp("STARTDATENTIME");
                 Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
                 String address = resultSet.getString("ADDRESS");
+                String addressUrl = resultSet.getString("ADDRESSURL");
                 String ticketTypes = resultSet.getString("ticketTypes");
                 String additionalInfo = resultSet.getString("AdditionalInfo");
-                event = id + "_" + name + "_" + startDateAndTime + "_" + endDateAndTime + "_" + address + "_" + ticketTypes + "_" + additionalInfo;
+                event = id + "_" + name + "_" + startDateAndTime + "_" + endDateAndTime + "_" + address + "_" + addressUrl + "_" + ticketTypes + "_" + additionalInfo;
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();
@@ -187,9 +188,10 @@ public class EventDAO {
                 Date startDateAndTime = resultSet.getTimestamp("STARTDATENTIME");
                 Date endDateAndTime = resultSet.getTimestamp("ENDDATENTIME");
                 String address = resultSet.getString("ADDRESS");
+                String addressUrl = resultSet.getString("ADDRESSURL");
                 String ticketTypes = resultSet.getString("ticketTypes");
                 String additionalInfo = resultSet.getString("AdditionalInfo");
-                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();

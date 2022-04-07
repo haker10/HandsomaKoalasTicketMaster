@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="720.0" styleClass="primaryStage" stylesheets="@css/editEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditEventController">
    <children>
-      <AnchorPane layoutX="163.0" layoutY="74.0" prefHeight="357.0" prefWidth="157.0" styleClass="left">
+      <AnchorPane layoutX="163.0" layoutY="33.0" prefHeight="398.0" prefWidth="157.0" styleClass="left">
          <children>
             <Label alignment="CENTER" layoutX="24.0" layoutY="93.0" text="START AND DATE TIME">
                <font>
@@ -40,17 +40,23 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
+            <Label alignment="CENTER" layoutX="22.0" layoutY="322.0" prefHeight="25.0" prefWidth="122.0" text="ADDRESS URL">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="320.0" layoutY="74.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="357.0" prefWidth="222.0" styleClass="right">
+      <AnchorPane layoutX="320.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="398.0" prefWidth="222.0" styleClass="right">
          <children>
             <TextField fx:id="nameTxt" alignment="CENTER" layoutX="29.0" layoutY="36.0" />
             <TextField fx:id="startDateAndTimeTxt" alignment="CENTER" layoutX="29.0" layoutY="82.0" />
             <TextField fx:id="endDateAndTimeTxt" alignment="CENTER" layoutX="31.0" layoutY="134.0" />
             <TextField fx:id="addressTxt" alignment="CENTER" layoutX="31.0" layoutY="181.0" prefHeight="17.0" prefWidth="149.0" />
-            <Button fx:id="saveBtn" layoutX="85.0" layoutY="318.0" mnemonicParsing="false" onAction="#saveEdit" styleClass="save" text="SAVE" />
+            <Button fx:id="saveBtn" layoutX="90.0" layoutY="359.0" mnemonicParsing="false" onAction="#saveEdit" styleClass="save" text="SAVE" />
             <TextField fx:id="ticketTypesTxt" alignment="CENTER" layoutX="30.0" layoutY="233.0" prefHeight="17.0" prefWidth="149.0" />
             <TextField fx:id="additionalInfoTxt" alignment="CENTER" layoutX="28.0" layoutY="276.0" prefHeight="17.0" prefWidth="149.0" />
+            <TextField fx:id="addressURLTxt" alignment="CENTER" layoutX="32.0" layoutY="318.0" prefHeight="17.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
    </children>

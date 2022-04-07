@@ -154,7 +154,7 @@ public class CoordinatorController implements Initializable {
     }
 
     public void printTicket(ActionEvent actionEvent) {
-        Stage currentStage = (Stage) logoutBtn.getScene().getWindow();
+        Stage currentStage = (Stage) printTicketBtn.getScene().getWindow();
         currentStage.close();
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/printTicketView.fxml"));

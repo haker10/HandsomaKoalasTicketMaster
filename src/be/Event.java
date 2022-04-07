@@ -15,15 +15,16 @@ public class Event {
     String ticketTypes;
     String additionalInfo;
 
-    public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address, String ticketTypes, String additionalInfo) {
+    public Event(int id, String name, Date startDatenTime, Date endDatenTime, String address,  String addressUrl, String ticketTypes, String additionalInfo) {
         this.id = id;
         this.name = name;
         this.startDatenTime = startDatenTime;
         this.endDatenTime = endDatenTime;
         this.address = address;
+        this.addressUrl = addressUrl;
         this.ticketTypes = ticketTypes;
         this.additionalInfo = additionalInfo;
-        this.addressUrl = addressUrl;
+
     }
 
     public void goUrl(String addressUrl) {
@@ -60,6 +61,7 @@ public class Event {
     }
 
     public String getTicketTypes() { return ticketTypes; }
+
     public String getAddressUrl() { return addressUrl; }
 
     public String getAdditionalInfo() {

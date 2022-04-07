@@ -12,9 +12,6 @@ public class CustomerParticipationModel {
 
     TicketMasterManager manager;
 
-    private ObservableList<Event> allEventsWithID;
-
-
     public CustomerParticipationModel() {
 
         manager = new TicketMasterManager();
