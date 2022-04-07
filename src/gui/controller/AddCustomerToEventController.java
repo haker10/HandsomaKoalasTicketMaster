@@ -50,7 +50,7 @@ public class AddCustomerToEventController implements Initializable {
 
     private void loadData(){
 
-        eventChoiceBox.getItems().addAll(addCustomerToEventModel.getAllEvents());
+        eventChoiceBox.getItems().addAll(addCustomerToEventModel.getAllEventsToDo());
 
     }
 

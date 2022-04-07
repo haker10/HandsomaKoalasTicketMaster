@@ -23,6 +23,12 @@ public class AddCustomerToEventModel {
         return allEvents;
     }
 
+    public ObservableList getAllEventsToDo() {
+        allEvents = FXCollections.observableArrayList();
+        allEvents.addAll(manager.getAllEventsToDo());
+        return allEvents;
+    }
+
     public Customer createCustomer(String name, String email, String phone) {
 
         Customer customer = manager.createCustomer(name, email, phone);

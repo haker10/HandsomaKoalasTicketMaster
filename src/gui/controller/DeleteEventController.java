@@ -3,14 +3,17 @@ package gui.controller;
 import be.Event;
 import gui.model.DeleteEventModel;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -18,15 +21,23 @@ import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.net.URL;
+import java.time.Instant;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class DeleteEventController implements Initializable {
 
     @FXML
-    private AnchorPane fieldsAnchorPane;
+    private TextField keywordTextField;
 
     @FXML
-    private ChoiceBox<?> eventChoiceBox;
+    private AnchorPane primaryStage;
+
+    @FXML
+    private TableView eventTableView;
+
+    @FXML
+    private TableColumn eventColumn;
 
     @FXML
     private Button deleteBtn;
@@ -40,22 +51,81 @@ public class DeleteEventController implements Initializable {
         deleteEventModel = new DeleteEventModel();
 
     }
+    public void updatePlayListTableView() {
+        eventColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        try {
+            eventTableView.setItems(deleteEventModel.getAllEvents());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
     private void loadData(){
 
         Platform.runLater(() -> {
             deleteEventModel = new DeleteEventModel();
-            Stage currentStage = (Stage) fieldsAnchorPane.getScene().getWindow();
+            Stage currentStage = (Stage) eventTableView.getScene().getWindow();
             type = (String) currentStage.getUserData();
         });
 
-        eventChoiceBox.getItems().addAll(deleteEventModel.getAllEvents());
+        updatePlayListTableView();
+        eventTableView.setRowFactory(tr -> new  TableRow<Event>(){
+            @Override
+            protected void updateItem(Event item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty == true){
+                    setStyle("-fx-background-color: #DAD5D6");
+                    return;
+                }
+                else if(item != null && Date.from(Instant.now()).after(item.getStartDatenTime())) {
+                    setStyle("-fx-background-color: #C54B6C;");
+                }
+                else{
+                    setStyle("-fx-background-color: #8DA47E;");
+                }
+
+            }
+        });
+        ObservableList<Event> eventList = deleteEventModel.getAllEvents();
+        FilteredList<Event> filteredData = null;
+        try {
+            filteredData = new FilteredList<>(eventList, b -> true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+        FilteredList<Event> finalFilteredData = filteredData;
+        keywordTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            finalFilteredData.setPredicate(event -> {
+
+
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (event.getName().toLowerCase().contains(lowerCaseFilter))
+                    return true;
+                else
+                    return false;
+            });
+        });
+
+
+        SortedList<Event> sortedData = new SortedList<>(filteredData);
+
+        sortedData.comparatorProperty().bind(eventTableView.comparatorProperty());
+
+        eventTableView.setItems(sortedData);
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        updatePlayListTableView();
         loadData();
 
     }
@@ -64,12 +134,12 @@ public class DeleteEventController implements Initializable {
         JFrame jFrame = new JFrame();
         try{
 
-            if (eventChoiceBox.getValue() == null){
-                JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
+            if (eventTableView.getSelectionModel().getSelectedItem() == null){
+                JOptionPane.showMessageDialog(jFrame, "CHOOSE AN EVENT !!\nPLEASE TRY AGAIN!!");
             }
             else {
                 if (type == "ADMIN") {
-                    deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
+                    deleteEventModel.deleteEvent(((Event) eventTableView.getSelectionModel().getSelectedItem()).getId());
                     JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
                     Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
                     currentStage.close();
@@ -84,7 +154,8 @@ public class DeleteEventController implements Initializable {
 
 
                 else if (type == "COORDINATOR"){
-                    deleteEventModel.deleteEvent(((Event) eventChoiceBox.getSelectionModel().getSelectedItem()).getId());
+                    System.out.println(eventTableView.getSelectionModel());
+                    deleteEventModel.deleteEvent(((Event) eventTableView.getSelectionModel().getSelectedItem()).getId());
                     JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
                     Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
                     currentStage.close();

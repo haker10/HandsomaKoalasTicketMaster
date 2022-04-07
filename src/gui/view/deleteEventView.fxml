@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="kur" stylesheets="@css/deleteEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
-    <children>
-        <AnchorPane fx:id="fieldsAnchorPane" layoutX="64.0" layoutY="62.0"  nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
-            <children>
-                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
-                <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../images/logo.png" />
-                    </image>
-                </ImageView>
-            </children>
-        </AnchorPane>
-        <AnchorPane  layoutX="230.0" layoutY="62.0"  prefHeight="224.0" prefWidth="268.0" styleClass="fieldsAnchorPane">
-            <children>
-                <ChoiceBox fx:id="eventChoiceBox" layoutX="14.0" layoutY="72.0" prefHeight="25.0" prefWidth="242.0" />
-                <Button fx:id="deleteBtn" layoutX="110.0" layoutY="142.0"  mnemonicParsing="false" onAction="#deleteEvent" styleClass="deleteBtn" text="Delete" />
-            </children>
-        </AnchorPane>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/searchCustomers.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
+   <children>
+      <TableView fx:id="eventTableView" layoutX="17.0" layoutY="71.0" prefHeight="314.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="eventColumn" prefWidth="148.0" text="Name" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="17.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="69.0" prefWidth="564.0" styleClass="top">
+         <children>
+             <Button fx:id="deleteBtn" layoutX="450" layoutY="22.0" mnemonicParsing="false" onAction="#deleteEvent" styleClass="deleteBtn" text="Delete" />
+            <TextField fx:id="keywordTextField" layoutX="208.0" layoutY="22.0" />
+            <Label layoutX="380.0" layoutY="26.0" text="Filter">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

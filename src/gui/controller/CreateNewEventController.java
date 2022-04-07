@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.w3c.dom.Text;
 
 import javax.swing.*;
 import java.net.URL;
@@ -48,6 +49,15 @@ public class CreateNewEventController implements Initializable {
     @FXML
     private TextField addressTxt;
 
+    @FXML
+    private TextField addressUrlTxt;
+
+    @FXML
+    private TextField ticketTypes;
+
+    @FXML
+    private TextField extraInfo;
+
     CreateNewEventModel createNewEventModel;
 
     public CreateNewEventController(){
@@ -66,13 +76,13 @@ public class CreateNewEventController implements Initializable {
     public void createEvent(ActionEvent actionEvent) {
         JFrame jFrame = new JFrame();
         try {
-            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || ticketTypesTxt.getText().isEmpty())
+            if (nameTxt.getText().isEmpty() || startDateAndTimeTxt.getText().isEmpty() || endDateAndTimeTxt.getText().isEmpty() || addressTxt.getText().isEmpty() || addressUrlTxt.getText().isEmpty() || ticketTypes.getText().isEmpty() || additionalInfo.getText().isEmpty())
                 JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
             else {
                 ObservableList ticketTypeList = createNewEventModel.ticketTypes(ticketTypesTxt.getText());
                 Date startDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(startDateAndTimeTxt.getText());
                 Date endDateAndTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(endDateAndTimeTxt.getText());
-                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), "Standard" + "," + ticketTypesTxt.getText(), additionalInfoTxt.getText());
+                createNewEventModel.createEvent(nameTxt.getText(), startDateAndTime, endDateAndTime, addressTxt.getText(), addressUrlTxt.getText(), ticketTypes.getText(), additionalInfo.getText());
                 JOptionPane.showMessageDialog(jFrame, "EVENT CREATED !!");
                 Stage currentStage = (Stage) createEventBtn.getScene().getWindow();
                 currentStage.close();

@@ -15,7 +15,7 @@ public class EditEventModel {
 
     }
 
-    public void editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String ticketTypes, String additionalInfo) {
-        manager.editEvent(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
+    public void editEvent(int id, String name, Date startDateAndTime, Date endDateAndTime, String address, String addressUrl, String ticketTypes, String additionalInfo) {
+        manager.editEvent(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
     }
 }
