@@ -96,7 +96,10 @@ public class CreateNewTicketController implements Initializable {
                     ObservableList list = typeChoice.getCheckModel().getCheckedItems();
                     for (int i = 0; i < list.size(); i++)
                     {
-                        choosenTypes += list.get(i) + " ";
+                        if (i != list.size() - 1)
+                            choosenTypes += list.get(i) + ", ";
+                        else
+                            choosenTypes += list.get(i);
 
                     }
                     createNewTicketModel.createTicket(eventId, customer, choosenTypes);
