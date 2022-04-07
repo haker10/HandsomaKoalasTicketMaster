@@ -56,7 +56,6 @@ public class CustomerParticipationController implements Initializable {
             endInfoColumn.setCellValueFactory(new PropertyValueFactory<>("endDatenTime"));
             addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
             addInfoColumn.setCellValueFactory(new PropertyValueFactory<>("additionalInfo"));
-
             for (Integer eventID : eventIDs) {
                 try {
                     customerParticipationTV.setItems(customerParticipationModel.getEventByIdOL(eventID));
