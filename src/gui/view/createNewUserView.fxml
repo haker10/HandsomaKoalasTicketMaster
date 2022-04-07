@@ -14,7 +14,7 @@
       <Label layoutX="149.0" layoutY="127.0" />
       <AnchorPane layoutX="179.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
          <children>
-            <Button fx:id="createUserBtn" layoutX="121.0" layoutY="185.0" mnemonicParsing="false" onAction="#HandleCreateUser" styleClass="createBtn" text="Create User" />
+            <Button fx:id="createUserBtn" layoutX="72.0" layoutY="185.0" mnemonicParsing="false" onAction="#HandleCreateUser" styleClass="createBtn" text="Create User" />
             <TextField fx:id="newPasswordTxt" alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="17.0" prefWidth="149.0" promptText="PASSWORD" styleClass="text-field" />
             <TextField fx:id="newUsernameTxt" alignment="CENTER" layoutX="36.0" layoutY="100.0" promptText="USERNAME" styleClass="text-field" />
             <ChoiceBox fx:id="typeOfUserChoiceBox" layoutX="35.0" layoutY="55.0" prefWidth="150.0" />

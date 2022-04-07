@@ -5,10 +5,17 @@ import gui.model.SearchCustomersModel;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,10 +23,13 @@ import java.util.ResourceBundle;
 public class SearchCustomersController implements Initializable {
 
     @FXML
+    private Button checkCustomerBtn;
+
+    @FXML
     private TextField keywordTextField;
 
     @FXML
-    private TableView customersTableView;
+    private TableView<Customer> customersTableView;
 
     @FXML
     private TableColumn nameColumn;
@@ -91,4 +101,22 @@ public class SearchCustomersController implements Initializable {
         customersTableView.setItems(sortedData);
     }
 
+    public void checkCustomer(ActionEvent actionEvent) {
+        TablePosition pos = customersTableView.getSelectionModel().getSelectedCells().get(0);
+        String customerEmail = (String) emailColumn.getCellObservableValue((customersTableView.getItems().get(pos.getRow()))).getValue();
+        Stage currentStage = (Stage) checkCustomerBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/customerParticipationView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.setUserData(customerEmail);
+            stage.show();
+            //scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

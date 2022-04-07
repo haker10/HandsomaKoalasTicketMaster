@@ -14,4 +14,5 @@ public class CreateNewUserModel {
 
         manager.createUser(typeOfUser, username, password);
     }
+
 }

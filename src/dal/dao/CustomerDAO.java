@@ -19,7 +19,7 @@ public class CustomerDAO {
 
     public Customer createCustomer(String name, String email, String phone) {
 
-        Customer customer = getCustomerByEmail(email);
+        Customer customer = getCustomerByEmail2(email);
 
         if(customer != null)
             return customer;
@@ -41,7 +41,7 @@ public class CustomerDAO {
         return customer;
     }
 
-    public Customer getCustomerByEmail(String email) {
+    public Customer getCustomerByEmail2(String email) {
         Customer customer = null;
         String sql = "SELECT * FROM Customers WHERE EMAIL=?";
         try (Connection connection = databaseConnector.getConnection()){
@@ -53,6 +53,25 @@ public class CustomerDAO {
                 String name = resultSet.getString("NAME");
                 String phone = resultSet.getString("PHONE");
                 customer = new Customer(name, email, phone);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return customer;
+    }
+
+    public String getCustomerByEmail(String email) {
+        String customer = "";
+        String sql = "SELECT * FROM Customers WHERE EMAIL=?";
+        try (Connection connection = databaseConnector.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getResultSet();
+            if (resultSet.next()){
+                String name = resultSet.getString("NAME");
+                String phone = resultSet.getString("PHONE");
+                customer = name + "_" + email + "_" + phone;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

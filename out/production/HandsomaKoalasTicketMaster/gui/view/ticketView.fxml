@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="673.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewTicketController">
+<children>
+   <AnchorPane layoutX="291.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="258.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
+      <children>
+         <CheckComboBox fx:id="typeChoice" layoutX="45.0" layoutY="129.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@css/ticket.css" title="Standard" />
+         <Button fx:id="createTicketBtn" layoutX="68.0" layoutY="219.0" mnemonicParsing="false" onAction="#createTicket" styleClass="createBtn" text="Create Ticket" />
+            <Label fx:id="customerName" contentDisplay="CENTER" layoutX="67.0" layoutY="36.0" prefHeight="17.0" prefWidth="105.0"  textAlignment="CENTER" />
+            <Label fx:id="eventName" contentDisplay="CENTER" layoutX="67.0" layoutY="89.0" prefHeight="17.0" prefWidth="105.0"  textAlignment="CENTER" />
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutX="125.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="258.0" prefWidth="166.0" styleClass="sideBar">
+      <children>
+         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+         <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../images/logo.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+</children>
+</AnchorPane>
