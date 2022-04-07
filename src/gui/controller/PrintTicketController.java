@@ -6,20 +6,36 @@ import gui.model.PrintTicketModel;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.w3c.dom.Element;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PrintTicketController implements Initializable {
+
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private TextField filterTxt;
@@ -66,17 +82,37 @@ public class PrintTicketController implements Initializable {
         String customerInfo = printTicketModel.getCustomerByEmail(email);
         String[] eventData = eventInfo.split("_");
         String[] customerData = customerInfo.split("_");
-        String eventName = "Event Name: " + eventData[1];
-        String ticketTypeName = "\nTicket Type: " + ticketType;
-        String eventStartDatenTime = "\nStart date and time: " + eventData[2];
-        String eventEndDatenTime = "\nEnd date and time: " + eventData[3];
-        String eventAddress = "\nAddress: " + eventData[4];
-        String eventAdditionalInfo = "\nAdditional Info: " + eventData[6];
-        String customerName = "\nCustomer Name: " + customerData[0];
-        String customerEmail = "\nEmail: " + customerData[1];
-        String customerPhone = "\nPhone: " + customerData[2];
+        String eventName = "\nEvent Name: " + eventData[1];
+        String ticketTypeName = "\n\nTicket Type: " + ticketType;
+        String eventStartDatenTime = "\n\nStart date and time: " + eventData[2];
+        String eventEndDatenTime = "\n\nEnd date and time: " + eventData[3];
+        String eventAddress = "\n\nAddress: " + eventData[4];
+        String eventAdditionalInfo = "\n\nAdditional Info: " + eventData[6];
+        String customerName = "\n\nCustomer Name: " + customerData[0];
+        String customerEmail = "\n\nEmail: " + customerData[1];
+        String customerPhone = "\n\nPhone: " + customerData[2];
         String ticket = eventName + ticketTypeName + eventStartDatenTime + eventEndDatenTime + eventAddress + eventAdditionalInfo + customerName + customerEmail + customerPhone;
-        System.out.println(ticket);
+        JFrame jFrame = new JFrame();
+        try{
+            if (email == null){
+                JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
+            }
+            else {
+                Stage currentStage = (Stage) printBtn.getScene().getWindow();
+                currentStage.close();
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/customerTicketView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                //stage.initStyle(StageStyle.TRANSPARENT);
+                stage.setScene(scene);
+                stage.setUserData(ticket);
+                stage.show();
+                //scene.setFill(Color.TRANSPARENT);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override
