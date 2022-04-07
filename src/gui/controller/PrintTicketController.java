@@ -87,11 +87,12 @@ public class PrintTicketController implements Initializable {
         String eventStartDatenTime = "\n\nStart date and time: " + eventData[2];
         String eventEndDatenTime = "\n\nEnd date and time: " + eventData[3];
         String eventAddress = "\n\nAddress: " + eventData[4];
-        String eventAdditionalInfo = "\n\nAdditional Info: " + eventData[6];
+        String eventAddressUrl = "\n\nAddress URL: " + eventData[5];
+        String eventAdditionalInfo = "\n\nAdditional Info: " + eventData[7];
         String customerName = "\n\nCustomer Name: " + customerData[0];
         String customerEmail = "\n\nEmail: " + customerData[1];
         String customerPhone = "\n\nPhone: " + customerData[2];
-        String ticket = eventName + ticketTypeName + eventStartDatenTime + eventEndDatenTime + eventAddress + eventAdditionalInfo + customerName + customerEmail + customerPhone;
+        String ticket = eventName + ticketTypeName + eventStartDatenTime + eventEndDatenTime + eventAddress + eventAddressUrl + eventAdditionalInfo + customerName + customerEmail + customerPhone;
         JFrame jFrame = new JFrame();
         try{
             if (email == null){
