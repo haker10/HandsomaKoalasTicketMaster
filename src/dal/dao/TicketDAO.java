@@ -20,7 +20,7 @@ public class TicketDAO {
 
     public Ticket createTicket(int eventId, String customer, String choosenTypes) {
         Ticket ticket = null;
-        String sql = "INSERT INTO Ticket(EventID, CustomerID, TicketType) VALUES(?,?,?)";
+        String sql = "INSERT INTO Tickets(EventID, CustomerID, TicketType) VALUES(?,?,?)";
 
         try (Connection connection = databaseConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -41,7 +41,7 @@ public class TicketDAO {
 
     public List<Ticket> getAllTickets() {
         List<Ticket> allTickets = new ArrayList<>();
-        String sql = "SELECT * FROM Ticket";
+        String sql = "SELECT * FROM Tickets";
 
         try (Connection connection = databaseConnector.getConnection()) {
             Statement statement = connection.createStatement();
