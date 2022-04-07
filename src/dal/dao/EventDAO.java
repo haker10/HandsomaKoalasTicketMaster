@@ -135,7 +135,7 @@ public class EventDAO {
                 String address = resultSet.getString("ADDRESS");
                 String ticketTypes = resultSet.getString("ticketTypes");
                 String additionalInfo = resultSet.getString("AdditionalInfo");
-                event = id + name + startDateAndTime + endDateAndTime + address + ticketTypes + additionalInfo;
+                event = id + "_" + name + "_" + startDateAndTime + "_" + endDateAndTime + "_" + address + "_" + ticketTypes + "_" + additionalInfo;
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();

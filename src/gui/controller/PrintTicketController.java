@@ -9,9 +9,13 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.w3c.dom.Element;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -58,10 +62,22 @@ public class PrintTicketController implements Initializable {
         TablePosition pos = searchTicketTV.getSelectionModel().getSelectedCells().get(0);
         int event = (Integer) eventNameColumn.getCellObservableValue(searchTicketTV.getItems().get(pos.getRow())).getValue();
         String email = (String) emailColumn.getCellObservableValue((searchTicketTV.getItems().get(pos.getRow()))).getValue();
+        String ticketType = (String) ticketTypeColumn.getCellObservableValue((searchTicketTV.getItems().get(pos.getRow()))).getValue();
         String eventInfo = printTicketModel.getEventById(event);
         String customerInfo = printTicketModel.getCustomerByEmail(email);
-        System.out.println(eventInfo);
-        System.out.println(customerInfo);
+        String[] eventData = eventInfo.split("_");
+        String[] customerData = customerInfo.split("_");
+        String eventName = "Event Name: " + eventData[1];
+        String ticketTypeName = "\nTicket Type: " + ticketType;
+        String eventStartDatenTime = "\nStart date and time: " + eventData[2];
+        String eventEndDatenTime = "\nEnd date and time: " + eventData[3];
+        String eventAddress = "\nAddress: " + eventData[4];
+        String eventAdditionalInfo = "\nAdditional Info: " + eventData[6];
+        String customerName = "\nCustomer Name: " + customerData[0];
+        String customerEmail = "\nEmail: " + customerData[1];
+        String customerPhone = "\nPhone: " + customerData[2];
+        String ticket = eventName + ticketTypeName + eventStartDatenTime + eventEndDatenTime + eventAddress + eventAdditionalInfo + customerName + customerEmail + customerPhone;
+        System.out.println(ticket);
     }
 
     @Override

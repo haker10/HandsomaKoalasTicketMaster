@@ -53,7 +53,7 @@ public class CustomerDAO {
             if (resultSet.next()){
                 String name = resultSet.getString("NAME");
                 String phone = resultSet.getString("PHONE");
-                customer = name + email + phone;
+                customer = name + "_" + email + "_" + phone;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
