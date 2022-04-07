@@ -24,9 +24,7 @@ public class CustomerParticipationModel {
         return manager.getEventByCustomer(customerEmail);
     }
 
-    public ObservableList<Event> getEventByIdOL(int eventIDs) {
-        allEventsWithID = FXCollections.observableArrayList();
-        allEventsWithID.addAll(manager.getEventByIdOL(eventIDs));
-        return allEventsWithID;
+    public Event getEventByIdOL(int eventIDs) {
+        return manager.getEventByIdOL(eventIDs);
     }
 }

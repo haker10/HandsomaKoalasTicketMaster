@@ -5,6 +5,8 @@ import be.Event;
 import gui.model.CustomerParticipationModel;
 import gui.model.EditEventModel;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -56,13 +58,16 @@ public class CustomerParticipationController implements Initializable {
             endInfoColumn.setCellValueFactory(new PropertyValueFactory<>("endDatenTime"));
             addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
             addInfoColumn.setCellValueFactory(new PropertyValueFactory<>("additionalInfo"));
+            ObservableList<Event> eventList = FXCollections.observableArrayList();
             for (Integer eventID : eventIDs) {
                 try {
-                    customerParticipationTV.setItems(customerParticipationModel.getEventByIdOL(eventID));
+                    eventList.add(customerParticipationModel.getEventByIdOL(eventID));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+            customerParticipationTV.setItems(eventList);
+
         });
     }
 

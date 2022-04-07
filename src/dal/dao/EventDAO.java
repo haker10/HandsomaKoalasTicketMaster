@@ -143,9 +143,9 @@ public class EventDAO {
         return event;
     }
 
-    public List<Event> getEventByIdOL(int id) {
+    public Event getEventByIdOL(int id) {
 
-        List<Event> allEventsWithID = new ArrayList<>();
+        Event event = null;
 
         String sql = "SELECT * FROM Events WHERE ID=?";
 
@@ -161,12 +161,11 @@ public class EventDAO {
                 String address = resultSet.getString("ADDRESS");
                 String ticketTypes = resultSet.getString("ticketTypes");
                 String additionalInfo = resultSet.getString("AdditionalInfo");
-                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
-                allEventsWithID.add(event);
+                event = new Event(id, name, startDateAndTime, endDateAndTime, address, ticketTypes, additionalInfo);
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();
         }
-        return allEventsWithID;
+        return event;
     }
 }

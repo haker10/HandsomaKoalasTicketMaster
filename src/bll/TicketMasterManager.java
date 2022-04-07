@@ -103,7 +103,7 @@ public class TicketMasterManager {
 
     public String getEventById(int id){ return eventDAO.getEventById(id); }
 
-    public List<Event> getEventByIdOL(int id){ return eventDAO.getEventByIdOL(id); }
+    public Event getEventByIdOL(int id){ return eventDAO.getEventByIdOL(id); }
 
     public String getCustomerByEmail(String email) { return customerDAO.getCustomerByEmail(email); }
 
