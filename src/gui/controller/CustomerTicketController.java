@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 public class CustomerTicketController implements Initializable {
 
     @FXML
-    public Label EventNameLBL;
+    private Label EventNameLBL;
 
     @FXML
     private Label uRLLBL;
@@ -68,11 +68,12 @@ public class CustomerTicketController implements Initializable {
     public void loadData() {
         Platform.runLater(() -> {
             customerTicketModel = new CustomerTicketModel();
-            Stage currentStage = (Stage) Label1.getScene().getWindow();
+            Stage currentStage = (Stage) ticketTypes.getScene().getWindow();
             String ticket = (String) currentStage.getUserData();
             String ticketT [] = ticket.split("\n\n");
 
             EventNameLBL.setText(ticketT[0]);
+            System.out.println(EventNameLBL);
             ticketTypes.setText(ticketT[1]);
             startDateNTimeLBL.setText(ticketT[2]);
             endDateNTimeLbl.setText(ticketT[3]);
