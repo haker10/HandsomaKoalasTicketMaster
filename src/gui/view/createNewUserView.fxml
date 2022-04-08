@@ -12,7 +12,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewUserController">
    <children>
       <Label layoutX="149.0" layoutY="127.0" />
-      <AnchorPane layoutX="179.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
+      <AnchorPane layoutX="300.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
          <children>
             <Button fx:id="createUserBtn" layoutX="72.0" layoutY="185.0" mnemonicParsing="false" onAction="#HandleCreateUser" styleClass="createBtn" text="Create User" />
             <TextField fx:id="newPasswordTxt" alignment="CENTER" layoutX="36.0" layoutY="137.0" prefHeight="17.0" prefWidth="149.0" promptText="PASSWORD" styleClass="text-field" />
@@ -24,10 +24,10 @@
                </font></Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="13.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
+      <AnchorPane layoutX="134.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
          <children>
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
-            <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/logo.png" />
                </image>

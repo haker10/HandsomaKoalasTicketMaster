@@ -107,4 +107,8 @@ public class EditEventController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
+    }
 }

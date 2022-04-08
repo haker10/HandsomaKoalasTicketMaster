@@ -19,8 +19,8 @@
     -fx-background-color: transparent;
 }
 .table-view .corner {
-     -fx-background-color: transparent;
- }
+    -fx-background-color: transparent;
+}
 .table-view .table-cell{
     -fx-border-color: transparent;
     -fx-padding: 2 0 2 10px;
@@ -43,7 +43,6 @@
     -fx-background-color: #fc76b3;
     -fx-background-radius: 25;
 }
-.XBtn{
+.XBtn {
     -fx-background-color: transparent;
 }
-

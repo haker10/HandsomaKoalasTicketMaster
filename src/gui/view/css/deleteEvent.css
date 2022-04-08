@@ -1,26 +1,48 @@
-.kur{
+.primaryStage{
     -fx-background-color: transparent;
 }
-.fieldsAnchorPane {
-    -fx-background-color: white;
+
+.top{
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
     -fx-background-radius: 25;
 }
-.sideBar {
+.table-view .column-header-background{
     -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
+}
+.deleteBtn{
+    -fx-background-color: #47cfd2;
     -fx-background-radius: 25;
 }
 .XBtn{
     -fx-background-color: transparent;
 }
-.deleteBtn{
-    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
-    -fx-background-radius: 25;
-}
-.choice-box {
-    -fx-background-color: linear-gradient( to right top, #47cfd2, #fc76b3);
-    -fx-mark-color: #47cfd2;
-}
-.choice-box .context-menu { -fx-background-color: #47cfd2; }
-.choice-box .menu-item:focused { -fx-background-color: #fc76b3; }
-.choice-box .menu-item > .label { -fx-text-fill: white; }
-.choice-box .menu-item:focused > .label { -fx-text-fill: black; }

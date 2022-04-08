@@ -3,6 +3,7 @@ package gui.controller;
 import be.Customer;
 import be.Ticket;
 import gui.model.PrintTicketModel;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -104,11 +105,11 @@ public class PrintTicketController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/gui/view/customerTicketView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
-                //stage.initStyle(StageStyle.TRANSPARENT);
+                stage.initStyle(StageStyle.TRANSPARENT);
                 stage.setScene(scene);
                 stage.setUserData(ticket);
                 stage.show();
-                //scene.setFill(Color.TRANSPARENT);
+                scene.setFill(Color.TRANSPARENT);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -153,5 +154,9 @@ public class PrintTicketController implements Initializable {
 
         searchTicketTV.setItems(sortedData);
 
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

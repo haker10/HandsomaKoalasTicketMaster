@@ -160,10 +160,10 @@ public class CoordinatorController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/printTicketView.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            // stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
-           // scene.setFill(Color.TRANSPARENT);
+            scene.setFill(Color.TRANSPARENT);
         }catch (Exception e){
             e.printStackTrace();
         }

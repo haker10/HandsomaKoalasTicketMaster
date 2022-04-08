@@ -14,3 +14,6 @@
     -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
     -fx-background-radius: 25;
 }
+.XBtn{
+    -fx-background-color: transparent;
+}

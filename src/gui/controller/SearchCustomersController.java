@@ -2,6 +2,7 @@ package gui.controller;
 
 import be.Customer;
 import gui.model.SearchCustomersModel;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -110,13 +111,17 @@ public class SearchCustomersController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/customerParticipationView.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            //stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.setUserData(customerEmail);
             stage.show();
-            //scene.setFill(Color.TRANSPARENT);
+            scene.setFill(Color.TRANSPARENT);
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

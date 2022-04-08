@@ -4,13 +4,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="648.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CustomerTicketController">
+<AnchorPane fx:id="anchorPane" prefHeight="686.0" prefWidth="976.0" styleClass="primaryStage" stylesheets="@css/customerTicket.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CustomerTicketController">
    <children>
-      <Label layoutX="403.0" layoutY="33.0" text="Customer Ticket">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="ticketLbl" layoutX="81.0" layoutY="83.0" prefHeight="538.0" prefWidth="794.0" />
+      <AnchorPane layoutX="227.0" layoutY="208.0" prefHeight="203.0" prefWidth="488.0" styleClass="ticketPane" stylesheets="@css/customerTicket.css">
+         <children>
+            <Label fx:id="EventNameLBL" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: black;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Label1" layoutX="14.0" layoutY="77.0" prefHeight="17.0" prefWidth="182.0"/>
+            <Label fx:id="uRLLBL" layoutX="14.0" layoutY="77.0" prefHeight="17.0" prefWidth="182.0" style="-fx-background-color: black;" />
+            <Label fx:id="startDateNTimeLBL" layoutX="14.0" layoutY="154.0" prefHeight="17.0" prefWidth="129.0" style="-fx-background-color: black;" />
+            <Label fx:id="endDateNTimeLbl" layoutX="14.0" layoutY="172.0" prefHeight="17.0" prefWidth="129.0" style="-fx-background-color: black;" />
+            <Label fx:id="additionalInfo" layoutX="14.0" layoutY="119.0" prefHeight="17.0" prefWidth="224.0" style="-fx-background-color: black;" />
+            <Label fx:id="addressLBL" layoutX="14.0" layoutY="60.0" prefHeight="17.0" prefWidth="182.0" style="-fx-background-color: black;" />
+            <Label fx:id="CPhoneLBL" layoutX="269.0" layoutY="154.0" prefHeight="17.0" prefWidth="129.0" style="-fx-background-color: black;" />
+            <Label fx:id="CNameLBL" layoutX="269.0" layoutY="136.0" prefHeight="17.0" prefWidth="129.0" style="-fx-background-color: black;" />
+            <Label fx:id="CEmailLBL" layoutX="269.0" layoutY="172.0" prefHeight="17.0" prefWidth="129.0" style="-fx-background-color: black;" />
+            <Label fx:id="ticketTypes" layoutX="216.0" layoutY="69.0" prefHeight="17.0" prefWidth="182.0" style="-fx-background-color: black;" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

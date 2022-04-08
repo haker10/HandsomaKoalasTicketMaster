@@ -31,9 +31,6 @@ public class DeleteEventController implements Initializable {
     private TextField keywordTextField;
 
     @FXML
-    private AnchorPane primaryStage;
-
-    @FXML
     private TableView eventTableView;
 
     @FXML

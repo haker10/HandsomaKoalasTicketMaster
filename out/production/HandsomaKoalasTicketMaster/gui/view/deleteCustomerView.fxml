@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/deleteCustomer.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteCustomerController">
 <children>
-   <AnchorPane layoutX="13.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
+   <AnchorPane layoutX="85.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="224.0" prefWidth="166.0" styleClass="sideBar">
       <children>
          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
          <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="25.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
@@ -18,10 +18,10 @@
          </ImageView>
       </children>
    </AnchorPane>
-   <AnchorPane layoutX="179.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
+   <AnchorPane layoutX="251.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
       <children>
          <ChoiceBox fx:id="customerChoiceBox" layoutX="35.0" layoutY="55.0" prefWidth="150.0" />
-         <Button styleClass="deleteBtn" fx:id="deleteBtn" layoutX="85.0" layoutY="156.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+         <Button fx:id="deleteBtn" layoutX="85.0" layoutY="156.0" mnemonicParsing="false" onAction="#delete" styleClass="deleteBtn" text="Delete" />
       </children>
    </AnchorPane>
 </children>

@@ -15,7 +15,7 @@
             <Button layoutX="182.0" layoutY="14.0" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
             <ImageView fx:id="image" fitHeight="90.0" fitWidth="157.0" layoutX="31.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../HandsomaKoalasTicketMaster/src/images/logo.png" />
+                  <Image url="@../../images/logo.png" />
                </image></ImageView>
          </children>
          <cursor>

@@ -7,6 +7,7 @@ import gui.model.EditEventModel;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -77,5 +78,9 @@ public class CustomerParticipationController implements Initializable {
 
         loadData();
 
+    }
+
+    public void closeBtnPressed(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }

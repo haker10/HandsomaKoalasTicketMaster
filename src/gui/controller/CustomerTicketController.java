@@ -16,13 +16,45 @@ import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CustomerTicketController implements Initializable {
 
     @FXML
-    private Label ticketLbl;
+    public Label EventNameLBL;
+
+    @FXML
+    private Label uRLLBL;
+
+    @FXML
+    private Label startDateNTimeLBL;
+
+    @FXML
+    private Label endDateNTimeLbl;
+
+    @FXML
+    private Label additionalInfo;
+
+    @FXML
+    private Label addressLBL;
+
+    @FXML
+    private Label CPhoneLBL;
+
+    @FXML
+    private Label CNameLBL;
+
+    @FXML
+    private Label CEmailLBL;
+
+    @FXML
+    private Label ticketTypes;
+
+    @FXML
+    private Label Label1;
+
 
     @FXML
     private AnchorPane anchorPane;
@@ -36,10 +68,21 @@ public class CustomerTicketController implements Initializable {
     public void loadData() {
         Platform.runLater(() -> {
             customerTicketModel = new CustomerTicketModel();
-            Stage currentStage = (Stage) ticketLbl.getScene().getWindow();
+            Stage currentStage = (Stage) Label1.getScene().getWindow();
             String ticket = (String) currentStage.getUserData();
-            ticketLbl.setText(ticket);
             String ticketT [] = ticket.split("\n\n");
+
+            EventNameLBL.setText(ticketT[0]);
+            ticketTypes.setText(ticketT[1]);
+            startDateNTimeLBL.setText(ticketT[2]);
+            endDateNTimeLbl.setText(ticketT[3]);
+            addressLBL.setText(ticketT[4]);
+            uRLLBL.setText(ticketT[5]);
+            additionalInfo.setText(ticketT[6]);
+            CNameLBL.setText(ticketT[7]);
+            CEmailLBL.setText(ticketT[8]);
+            CPhoneLBL.setText(ticketT[9]);
+
             String customerName = ticketT[6];
             String eventName = ticketT[0];
             String customerNameFinal [] = customerName.split(" ");

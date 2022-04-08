@@ -5,10 +5,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/searchCustomers.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/deleteEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
    <children>
       <TableView fx:id="eventTableView" layoutX="17.0" layoutY="71.0" prefHeight="314.0" prefWidth="564.0">
         <columns>
@@ -17,13 +19,19 @@
       </TableView>
       <AnchorPane layoutX="17.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="69.0" prefWidth="564.0" styleClass="top">
          <children>
-             <Button fx:id="deleteBtn" layoutX="450" layoutY="22.0" mnemonicParsing="false" onAction="#deleteEvent" styleClass="deleteBtn" text="Delete" />
+            <Button layoutX="524.0" layoutY="4.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
+             <Button fx:id="deleteBtn" alignment="CENTER" layoutX="492.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteEvent" styleClass="deleteBtn" text="Delete" />
             <TextField fx:id="keywordTextField" layoutX="208.0" layoutY="22.0" />
             <Label layoutX="380.0" layoutY="26.0" text="Filter">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
+            <ImageView fitHeight="56.0" fitWidth="106.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
