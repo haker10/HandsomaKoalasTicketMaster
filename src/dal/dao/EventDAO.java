@@ -99,8 +99,8 @@ public class EventDAO {
                 String address = resultSet.getString("ADDRESS");
                 String addressUrl = resultSet.getString("ADDRESSURL");
                 String ticketTypes = resultSet.getString("ticketTypes");
-                String extraInfo = resultSet.getString("AdditionalInfo");
-                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, extraInfo);
+                String additionalInfo = resultSet.getString("AdditionalInfo");
+                Event event = new Event(id, name, startDateAndTime, endDateAndTime, address, addressUrl, ticketTypes, additionalInfo);
                 allEvents.add(event);
             }
         } catch (SQLException throwables) {

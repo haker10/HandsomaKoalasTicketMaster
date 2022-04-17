@@ -1,37 +1,31 @@
 package gui.controller;
 
-import be.Customer;
 import be.Ticket;
 import gui.model.PrintTicketModel;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.print.PrinterJob;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.w3c.dom.Element;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
 import java.net.URL;
+import java.text.ParseException;
+import java.time.Instant;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.text.SimpleDateFormat;
 
 public class PrintTicketController implements Initializable {
 
@@ -57,7 +51,10 @@ public class PrintTicketController implements Initializable {
     private TableColumn ticketTypeColumn;
 
 
+
     PrintTicketModel printTicketModel;
+
+
     //Constructor =  Lego
     public PrintTicketController() {
 
@@ -117,9 +114,50 @@ public class PrintTicketController implements Initializable {
 
     }
 
+    public Date StartDateNTime(Ticket ticket){
+            Date date1;
+            String eventInfo = printTicketModel.getEventById(ticket.getEventId());
+            String[] eventData = eventInfo.split("_");
+            String sDate1 = eventData[3];
+        System.out.println(sDate1);
+        try {
+            date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse(sDate1);
+        }catch(ParseException ex){
+            System.err.print(ex.getMessage());
+            date1 = null;
+        }
+        return date1;
+        }
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         updateTicketListTableView();
+        searchTicketTV.setRowFactory(tr -> new  TableRow<Ticket>(){
+            @Override
+            protected void updateItem(Ticket item, boolean empty) {
+                super.updateItem(item, empty);
+                Date date1 = null;
+
+                if( !empty && item != null){
+                    date1 = StartDateNTime(item);
+                }
+
+
+                if (empty == true){
+                    setStyle("-fx-background-color: #DAD5D6");
+                    return;
+                }
+                if(item != null && date1 != null &&  Date.from(Instant.now()).after(date1)){
+                    setStyle("-fx-background-color: #C54B6C;");
+                }
+                else{
+                    setStyle("-fx-background-color: #8DA47E;");
+                }
+
+            }
+        });
         ObservableList<Ticket> ticketList = printTicketModel.getAllTickets();
         FilteredList<Ticket> filteredData = null;
         try {
