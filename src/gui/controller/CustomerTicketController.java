@@ -116,11 +116,11 @@ public class CustomerTicketController implements Initializable {
             CEmailLBL.setText(ticketT[8]);
             CPhoneLBL.setText(ticketT[9]);
 
-            String customerName = ticketT[6];
+            String customerName = ticketT[7];
             String eventName = ticketT[0];
             String customerNameFinal [] = customerName.split(" ");
             String eventNameFinal [] = eventName.split(" ");
-            String customerNameFinal2 = eventNameFinal[2] + customerNameFinal[2] + "ticket.png";
+            String customerNameFinal2 = eventNameFinal[2] + customerNameFinal[2] + "Ticket.png";
 
             try {
                 WritableImage image = anchorPane.snapshot(new SnapshotParameters(), null);
