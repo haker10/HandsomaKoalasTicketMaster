@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewUserController">
    <children>
       <Label layoutX="149.0" layoutY="127.0" />
       <AnchorPane layoutX="300.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="220.0" styleClass="fieldsAnchorPane">
@@ -32,6 +32,11 @@
                   <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
+            <Button layoutX="115.0" layoutY="5.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

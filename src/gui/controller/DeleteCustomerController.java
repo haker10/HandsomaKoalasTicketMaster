@@ -1,9 +1,7 @@
 package gui.controller;
 
 import be.Customer;
-import be.Event;
 import gui.model.DeleteCustomerModel;
-import gui.model.DeleteEventModel;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,10 +22,10 @@ import java.util.ResourceBundle;
 public class DeleteCustomerController implements Initializable {
 
     @FXML
-    public Button deleteBtn;
+    private Button deleteBtn;
 
     @FXML
-    public ChoiceBox<?> customerChoiceBox;
+    private ChoiceBox<?> customerChoiceBox;
 
     DeleteCustomerModel deleteCustomerModel;
 
@@ -76,5 +74,22 @@ public class DeleteCustomerController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

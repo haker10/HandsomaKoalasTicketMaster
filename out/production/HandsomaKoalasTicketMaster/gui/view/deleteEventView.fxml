@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/deleteEvent.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="608.0" styleClass="primaryStage" stylesheets="@css/deleteEvent.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DeleteEventController">
    <children>
       <TableView fx:id="eventTableView" layoutX="17.0" layoutY="71.0" prefHeight="314.0" prefWidth="564.0">
         <columns>
@@ -32,6 +32,11 @@
                   <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
+            <Button layoutY="-8.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="673.0" styleClass="primaryStage" stylesheets="@css/createNewUser.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateNewTicketController">
@@ -27,6 +28,11 @@
                <Image url="@../../images/logo.png" />
             </image>
          </ImageView>
+            <Button layoutX="128.0" layoutY="5.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
       </children>
    </AnchorPane>
 </children>

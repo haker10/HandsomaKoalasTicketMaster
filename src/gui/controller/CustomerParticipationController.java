@@ -1,19 +1,22 @@
 package gui.controller;
 
-import be.Customer;
 import be.Event;
 import gui.model.CustomerParticipationModel;
-import gui.model.EditEventModel;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.List;
@@ -82,5 +85,22 @@ public class CustomerParticipationController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) customerParticipationTV.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/searchCustomersView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

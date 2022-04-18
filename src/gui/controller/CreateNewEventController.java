@@ -2,8 +2,6 @@ package gui.controller;
 
 import gui.model.CreateNewEventModel;
 import javafx.application.Platform;
-import javafx.beans.Observable;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,24 +10,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.w3c.dom.Text;
 
 import javax.swing.*;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
 public class CreateNewEventController implements Initializable {
 
     @FXML
-    public TextField ticketTypesTxt;
+    private TextField ticketTypesTxt;
 
     @FXML
     private TextField additionalInfoTxt;
@@ -97,4 +92,20 @@ public class CreateNewEventController implements Initializable {
         Platform.exit();
     }
 
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) createEventBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

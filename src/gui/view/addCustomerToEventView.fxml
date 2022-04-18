@@ -19,6 +19,11 @@
                <Image url="@../../images/logo.png" />
             </image>
          </ImageView>
+            <Button layoutX="120.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
       </children>
    </AnchorPane>
    <AnchorPane layoutX="286.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="255.0" styleClass="fieldsAnchorPane">

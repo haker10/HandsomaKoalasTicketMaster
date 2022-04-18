@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="851.0" styleClass="primaryStage" stylesheets="@css/printTicket.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="851.0" styleClass="primaryStage" stylesheets="@css/printTicket.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
    <children>
       <AnchorPane layoutX="61.0" prefHeight="104.0" prefWidth="722.0" styleClass="top">
          <children>
@@ -28,6 +28,11 @@
                </image>
             </ImageView>
             <Button fx:id="deleteBtn" layoutX="84.0" layoutY="49.0" mnemonicParsing="false" onAction="#deleteTicket" prefHeight="25.0" prefWidth="61.0" styleClass="print" text="Delete" />
+            <Button layoutX="671.0" layoutY="-7.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <TableView fx:id="searchTicketTV" layoutX="61.0" layoutY="104.0" prefHeight="518.0" prefWidth="722.0">

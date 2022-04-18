@@ -1,7 +1,5 @@
 package gui.controller;
 
-import be.Customer;
-import be.Event;
 import be.Ticket;
 import gui.model.PrintTicketModel;
 import javafx.application.Platform;
@@ -35,9 +33,6 @@ public class PrintTicketController implements Initializable {
     private Button deleteBtn;
 
     @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
     private TextField filterTxt;
 
     @FXML
@@ -59,8 +54,6 @@ public class PrintTicketController implements Initializable {
 
     PrintTicketModel printTicketModel;
 
-
-    //Constructor =  Lego
     public PrintTicketController() {
 
         printTicketModel = new PrintTicketModel();
@@ -222,6 +215,23 @@ public class PrintTicketController implements Initializable {
                 stage.show();
             }
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

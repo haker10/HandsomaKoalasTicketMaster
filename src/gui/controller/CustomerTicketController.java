@@ -1,10 +1,7 @@
 package gui.controller;
 
-import be.Customer;
 import gui.model.CustomerTicketModel;
-import gui.model.ListOfParticipantsModel;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +13,6 @@ import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -73,7 +69,6 @@ public class CustomerTicketController implements Initializable {
             String ticketT [] = ticket.split("\n\n");
 
             EventNameLBL.setText(ticketT[0]);
-            System.out.println(EventNameLBL);
             ticketTypes.setText(ticketT[1]);
             startDateNTimeLBL.setText(ticketT[2]);
             endDateNTimeLbl.setText(ticketT[3]);
@@ -99,8 +94,6 @@ public class CustomerTicketController implements Initializable {
         }
         });
 
-
-
     }
 
 
@@ -111,4 +104,5 @@ public class CustomerTicketController implements Initializable {
         loadData();
 
     }
+
 }

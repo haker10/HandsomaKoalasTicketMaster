@@ -19,10 +19,10 @@ import java.util.ResourceBundle;
 public class AdminController implements Initializable {
 
     @FXML
-    public Button XBtn;
+    private Button XBtn;
 
     @FXML
-    public Button deleteCustomerBtn;
+    private Button deleteCustomerBtn;
 
     @FXML
     private Button deleteEventBtn;

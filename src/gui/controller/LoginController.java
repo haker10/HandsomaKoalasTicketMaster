@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -26,14 +25,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+
     @FXML
-    public Label Title;
+    private Label Title;
+
     @FXML
     private TextField UserNameTxt;
+
     @FXML
     private PasswordField PasswordTxt;
+
     @FXML
     private Button LoginBtn;
+
     @FXML
     ImageView image;
 

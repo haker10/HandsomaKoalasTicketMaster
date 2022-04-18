@@ -2,7 +2,6 @@ package bll;
 
 import be.*;
 import dal.dao.*;
-import javafx.collections.ObservableList;
 
 import java.util.Date;
 import java.util.List;
@@ -50,6 +49,7 @@ public class TicketMasterManager {
     public List<Event> getAllEvents() {
         return eventDAO.getAllEvents();
     }
+
     public List<Event> getAllEventsToDo() {
         return eventDAO.getAllEventsToDo();
     }
@@ -57,7 +57,6 @@ public class TicketMasterManager {
     public String getTicketTypes(int eventId) {
         return eventDAO.getTicketTypes(eventId);
     }
-
 
     public void deleteEvent(int chosenEventId) {
         try{

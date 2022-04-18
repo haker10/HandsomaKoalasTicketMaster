@@ -1,6 +1,5 @@
 package gui.model;
 
-import be.Event;
 import bll.TicketMasterManager;
 
 import java.util.Date;

@@ -12,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -116,5 +115,22 @@ public class CreateNewTicketController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) createTicketBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/addCustomerToEventView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

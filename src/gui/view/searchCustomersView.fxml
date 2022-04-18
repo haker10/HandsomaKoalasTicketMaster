@@ -34,6 +34,7 @@
                   <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
+            <Button layoutX="526.0" layoutY="2.0" mnemonicParsing="false" onAction="#backBtnPressed" prefHeight="17.0" prefWidth="27.0" styleClass="XBtn" text="←" />
          </children>
       </AnchorPane>
    </children>

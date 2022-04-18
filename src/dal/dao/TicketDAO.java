@@ -1,6 +1,5 @@
 package dal.dao;
 
-import be.Event;
 import be.Ticket;
 import dal.DatabaseConnector;
 

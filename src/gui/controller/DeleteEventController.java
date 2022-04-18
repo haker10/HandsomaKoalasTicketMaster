@@ -14,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -151,7 +150,6 @@ public class DeleteEventController implements Initializable {
 
 
                 else if (type == "COORDINATOR"){
-                    System.out.println(eventTableView.getSelectionModel());
                     deleteEventModel.deleteEvent(((Event) eventTableView.getSelectionModel().getSelectedItem()).getId());
                     JOptionPane.showMessageDialog(jFrame, "EVENT DELETED !!");
                     Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
@@ -172,5 +170,37 @@ public class DeleteEventController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+        if (type == "ADMIN") {
+            Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+            currentStage.close();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+                scene.setFill(Color.TRANSPARENT);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (type == "COORDINATOR") {
+            Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+            currentStage.close();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+                scene.setFill(Color.TRANSPARENT);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

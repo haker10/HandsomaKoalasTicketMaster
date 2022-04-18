@@ -73,4 +73,21 @@ public class DeleteUserController implements Initializable {
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
     }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) userChoiceBox.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/adminView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

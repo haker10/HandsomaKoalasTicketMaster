@@ -26,6 +26,7 @@
                </font>
             </Label>
              <Button layoutX="524.0" layoutY="8.0" mnemonicParsing="false" onAction="#closeBtnPressed" prefHeight="25.0" prefWidth="27.0" styleClass="XBtn" text="X" />
+            <Button layoutX="23.0" layoutY="-4.0" mnemonicParsing="false" onAction="#backBtnPressed" prefHeight="25.0" prefWidth="27.0" styleClass="XBtn" text="←" />
          </children>
       </AnchorPane>
    </children>

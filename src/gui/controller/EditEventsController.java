@@ -22,8 +22,6 @@ import javafx.stage.StageStyle;
 import javax.swing.*;
 import java.net.URL;
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -33,7 +31,7 @@ public class EditEventsController implements Initializable {
     private TextField keywordTextField;
 
     @FXML
-    public Button listOfParticipantsBtn;
+    private Button listOfParticipantsBtn;
 
     @FXML
     private TableView eventTableView;
@@ -165,5 +163,22 @@ public class EditEventsController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void backBtnPressed(ActionEvent actionEvent) {
+
+        Stage currentStage = (Stage) listOfParticipantsBtn.getScene().getWindow();
+        currentStage.close();
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+            scene.setFill(Color.TRANSPARENT);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
