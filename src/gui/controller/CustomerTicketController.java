@@ -4,17 +4,24 @@ import gui.model.CustomerTicketModel;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Label;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class CustomerTicketController implements Initializable {
 
@@ -92,7 +99,22 @@ public class CustomerTicketController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+            currentStage.close();
+
+            try{
+
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/printTicketView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+                scene.setFill(Color.TRANSPARENT);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         });
+
 
     }
 
@@ -100,9 +122,10 @@ public class CustomerTicketController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         loadData();
 
     }
+
+
 
 }
