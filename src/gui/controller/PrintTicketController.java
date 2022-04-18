@@ -1,5 +1,7 @@
 package gui.controller;
 
+import be.Customer;
+import be.Event;
 import be.Ticket;
 import gui.model.PrintTicketModel;
 import javafx.application.Platform;
@@ -28,6 +30,9 @@ import java.util.ResourceBundle;
 import java.text.SimpleDateFormat;
 
 public class PrintTicketController implements Initializable {
+
+    @FXML
+    private Button deleteBtn;
 
     @FXML
     private AnchorPane anchorPane;
@@ -119,7 +124,6 @@ public class PrintTicketController implements Initializable {
             String eventInfo = printTicketModel.getEventById(ticket.getEventId());
             String[] eventData = eventInfo.split("_");
             String sDate1 = eventData[3];
-        System.out.println(sDate1);
         try {
             date1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse(sDate1);
         }catch(ParseException ex){
@@ -196,5 +200,29 @@ public class PrintTicketController implements Initializable {
 
     public void closeBtnPressed(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void deleteTicket(ActionEvent actionEvent) {
+        JFrame jFrame = new JFrame();
+        try{
+            if (searchTicketTV.getSelectionModel().getSelectedItem() == null){
+                JOptionPane.showMessageDialog(jFrame, "FIELD IS EMPTY !!\nPLEASE TRY AGAIN!!");
+            }
+            else {
+                printTicketModel.deleteTicket(((Ticket) searchTicketTV.getSelectionModel().getSelectedItem()).getId());
+                JOptionPane.showMessageDialog(jFrame, "TICKET DELETED !!");
+                Stage currentStage = (Stage) deleteBtn.getScene().getWindow();
+                currentStage.close();
+                Parent root = FXMLLoader.load(getClass().getResource("/gui/view/coordinatorView.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                scene.setFill(Color.TRANSPARENT);
+                stage.setScene(scene);
+                stage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

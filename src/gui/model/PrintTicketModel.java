@@ -27,4 +27,8 @@ public class PrintTicketModel {
     public String getCustomerByEmail(String email) {
         return manager.getCustomerByEmail(email);
     }
+
+    public void deleteTicket(int id) {
+        manager.deleteTicket(id);
+    }
 }

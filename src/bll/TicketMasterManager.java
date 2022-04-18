@@ -113,4 +113,12 @@ public class TicketMasterManager {
     public List<Integer> getEventByCustomer(String customerEmail) {
         return customerJoinsEventDAO.getEventByCustomer(customerEmail);
     }
+
+    public void deleteTicket(int id) {
+        try{
+            ticketDAO.deleteTicket(id);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

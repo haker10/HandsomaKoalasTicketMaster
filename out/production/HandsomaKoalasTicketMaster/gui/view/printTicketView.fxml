@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" fx:id="anchorPane" prefHeight="648.0" prefWidth="851.0" stylesheets="@css/printTicket.css" styleClass="primaryStage" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="851.0" styleClass="primaryStage" stylesheets="@css/printTicket.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrintTicketController">
    <children>
       <AnchorPane layoutX="61.0" prefHeight="104.0" prefWidth="722.0" styleClass="top">
          <children>
              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
             <TextField fx:id="filterTxt" layoutX="289.0" layoutY="40.0" prefHeight="25.0" prefWidth="196.0" />
-            <Button fx:id="printBtn" layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onAction="#printTicket" prefHeight="25.0" prefWidth="61.0" styleClass="print" text="Print" />
+            <Button fx:id="printBtn" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#printTicket" prefHeight="25.0" prefWidth="61.0" styleClass="print" text="Print" />
              <Label layoutX="239.0" layoutY="44.0" text="Filter">
                  <font>
                      <Font name="System Italic" size="12.0" />
@@ -27,6 +27,7 @@
                   <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
+            <Button fx:id="deleteBtn" layoutX="84.0" layoutY="49.0" mnemonicParsing="false" onAction="#deleteTicket" prefHeight="25.0" prefWidth="61.0" styleClass="print" text="Delete" />
          </children>
       </AnchorPane>
       <TableView fx:id="searchTicketTV" layoutX="61.0" layoutY="104.0" prefHeight="518.0" prefWidth="722.0">

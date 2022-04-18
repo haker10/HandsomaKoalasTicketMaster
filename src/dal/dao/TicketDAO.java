@@ -60,5 +60,18 @@ public class TicketDAO {
         }
         return allTickets;
     }
+
+    public void deleteTicket(int id) {
+        String sql = "DELETE FROM Tickets WHERE ID = ?";
+
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
 
