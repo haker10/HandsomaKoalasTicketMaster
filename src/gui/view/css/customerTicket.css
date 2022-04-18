@@ -1,9 +1,8 @@
 .primaryStage{
     -fx-background-color: transparent;
 }
-.ticketPane{
-    -fx-background-radius: 25;
-    -fx-background-image:url("/images/partyBackground.png");
+.ticket{
+    -fx-background-color: linear-gradient(to right top, #47cfd2, #fc76b3);
 }
 .label{
     -fx-text-fill: white;
