@@ -99,6 +99,7 @@ public class CustomerTicketController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
             currentStage.close();
 
             try{
@@ -113,6 +114,7 @@ public class CustomerTicketController implements Initializable {
             }catch (Exception e){
                 e.printStackTrace();
             }
+
         });
 
 
