@@ -7,7 +7,7 @@
 <AnchorPane layoutX="89.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="400.0" prefWidth="600.0" styleClass="stage" stylesheets="@css/listOfParticipants.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.ListOfParticipantsController">
    <children>
       <ListView fx:id="listOfParticipantsListView" layoutX="18.0" layoutY="15.0" prefHeight="369.0" prefWidth="565.0" />
-      <Button layoutX="578.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="XBtn" text="X" />
-      <Button layoutX="544.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="XBtn" text="←" />
+      <Button layoutX="562.0" layoutY="-6.0" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="functionBtn" text="X" />
+      <Button layoutX="529.0" layoutY="-7.0" mnemonicParsing="false" onAction="#backBtnPressed" styleClass="functionBtn" text="←" />
    </children>
 </AnchorPane>
