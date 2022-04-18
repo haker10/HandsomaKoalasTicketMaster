@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="979.0" styleClass="primaryStage" stylesheets="@css/customerParticipation.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CustomerParticipationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="979.0" styleClass="primaryStage" stylesheets="@css/customerParticipation.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CustomerParticipationController">
    <children>
       <TableView fx:id="customerParticipationTV" layoutX="8.0" layoutY="110.0" prefHeight="505.0" prefWidth="963.0">
         <columns>
